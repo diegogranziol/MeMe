@@ -1,0 +1,281 @@
+\begin{thebibliography}{44}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akemann et~al.(2011)Akemann, Baik, and Francesco]{RMTbook}
+G.~Akemann, J.~Baik, and P.~D. Francesco.
+\newblock \emph{The Oxford Handbook of Random Matrix Theory}.
+\newblock Oxford University Press, 2011.
+
+\bibitem[Albert and Barab{\'a}si(2002)]{albert2002statistical}
+R.~Albert and A.-L. Barab{\'a}si.
+\newblock Statistical mechanics of complex networks.
+\newblock \emph{Reviews of modern physics}, 74\penalty0 (1):\penalty0 47, 2002.
+
+\bibitem[Barab{\'a}si and Albert(1999)]{barabasi1999emergence}
+A.-L. Barab{\'a}si and R.~Albert.
+\newblock Emergence of scaling in random networks.
+\newblock \emph{science}, 286\penalty0 (5439):\penalty0 509--512, 1999.
+
+\bibitem[Belkin and Niyogi(2003)]{belkin2003laplacian}
+M.~Belkin and P.~Niyogi.
+\newblock Laplacian eigenmaps for dimensionality reduction and data
+  representation.
+\newblock \emph{Neural computation}, 15\penalty0 (6):\penalty0 1373--1396,
+  2003.
+
+\bibitem[Bhatia(2013)]{bhatia2013matrix}
+R.~Bhatia.
+\newblock \emph{Matrix analysis}, volume 169.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem[Buchen and Kelly(1996)]{Buchen1996}
+P.~W. Buchen and M.~Kelly.
+\newblock The {M}aximum {E}ntropy {D}istribution of an {A}sset inferred from
+  {O}ption {P}rices.
+\newblock \emph{Journal of Financial and Quantitative Analysis}, 31\penalty0
+  (01):\penalty0 143--159, 1996.
+
+\bibitem[Capocci et~al.(2005)Capocci, Servedio, Caldarelli, and
+  Colaiori]{capocci2005detecting}
+A.~Capocci, V.~D. Servedio, G.~Caldarelli, and F.~Colaiori.
+\newblock Detecting communities in large networks.
+\newblock \emph{Physica A: Statistical Mechanics and its Applications},
+  352\penalty0 (2-4):\penalty0 669--676, 2005.
+
+\bibitem[Caticha(2000)]{fluctuationpriors}
+A.~Caticha.
+\newblock Maximum entropy, fluctuations and priors.
+\newblock 2000.
+
+\bibitem[Chen and Yuan(2006)]{chen2006detecting}
+J.~Chen and B.~Yuan.
+\newblock Detecting functional modules in the yeast protein--protein
+  interaction network.
+\newblock \emph{Bioinformatics}, 22\penalty0 (18):\penalty0 2283--2290, 2006.
+
+\bibitem[Chung(1997)]{chung1997spectral}
+F.~R. Chung.
+\newblock \emph{Spectral graph theory}.
+\newblock Number~92. American Mathematical Soc., 1997.
+
+\bibitem[Dourisboure et~al.(2007)Dourisboure, Geraci, and
+  Pellegrini]{dourisboure2007extraction}
+Y.~Dourisboure, F.~Geraci, and M.~Pellegrini.
+\newblock Extraction and classification of dense communities in the web.
+\newblock In \emph{Proceedings of the 16th international conference on World
+  Wide Web}, pages 461--470. ACM, 2007.
+
+\bibitem[Erd{\"o}s and R{\'e}nyi(1959)]{erdos1959random}
+P.~Erd{\"o}s and A.~R{\'e}nyi.
+\newblock On random graphs, i.
+\newblock \emph{Publicationes Mathematicae (Debrecen)}, 6:\penalty0 290--297,
+  1959.
+
+\bibitem[Fitzsimons et~al.(2017)Fitzsimons, Granziol, Cutajar, Osborne,
+  Filippone, and Roberts]{ete}
+J.~Fitzsimons, D.~Granziol, K.~Cutajar, M.~Osborne, M.~Filippone, and
+  S.~Roberts.
+\newblock Entropic trace estimates for log determinants, 2017.
+
+\bibitem[Flake et~al.(2000)Flake, Lawrence, and Giles]{flake2000efficient}
+G.~W. Flake, S.~Lawrence, and C.~L. Giles.
+\newblock Efficient identification of web communities.
+\newblock In \emph{Proceedings of the sixth ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 150--160. ACM, 2000.
+
+\bibitem[Fortunato(2010)]{fortunato2010community}
+S.~Fortunato.
+\newblock Community detection in graphs.
+\newblock \emph{Physics reports}, 486\penalty0 (3-5):\penalty0 75--174, 2010.
+
+\bibitem[Gershgorin(1931)]{gershgorin1931uber}
+S.~A. Gershgorin.
+\newblock {\"U}ber die {A}bgrenzung der {E}igenwerte einer {M}atrix.
+\newblock \emph{Izvestija {A}kademii {N}auk {SSSR}, {S}erija {M}atematika},
+  \penalty0 (6):\penalty0 749--754, 1931.
+
+\bibitem[Giffin et~al.(2016)Giffin, Cafaro, and Ali]{Giffin2016}
+A.~Giffin, C.~Cafaro, and S.~A. Ali.
+\newblock Application of the {M}aximum {R}elative {E}ntropy method to the
+  {P}hysics of {F}erromagnetic {M}aterials.
+\newblock \emph{Physica A: Statistical Mechanics and its Applications},
+  455:\penalty0 11 -- 26, 2016.
+\newblock ISSN 0378-4371.
+
+\bibitem[Han et~al.(2015)Han, Malioutov, and Shin]{han2015large}
+I.~Han, D.~Malioutov, and J.~Shin.
+\newblock Large-scale log-determinant computation through stochastic chebyshev
+  expansions.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  908--917, 2015.
+
+\bibitem[Hershey and Olsen(2007)]{hershey2007approximating}
+J.~R. Hershey and P.~A. Olsen.
+\newblock Approximating the kullback leibler divergence between gaussian
+  mixture models.
+\newblock In \emph{Acoustics, Speech and Signal Processing, 2007. ICASSP 2007.
+  IEEE International Conference on}, volume~4, pages IV--317. IEEE, 2007.
+
+\bibitem[Hutchinson(1990)]{hutchinson1990stochastic}
+M.~F. Hutchinson.
+\newblock A stochastic estimator of the trace of the influence matrix for
+  laplacian smoothing splines.
+\newblock \emph{Communications in Statistics-Simulation and Computation},
+  19\penalty0 (2):\penalty0 433--450, 1990.
+
+\bibitem[Jaynes(1957)]{Jaynes1957}
+E.~T. Jaynes.
+\newblock Information theory and statistical mechanics.
+\newblock \emph{Phys. Rev.}, 106:\penalty0 620--630, May 1957.
+
+\bibitem[Kang et~al.(2011)Kang, Meeder, and Faloutsos]{kang2011spectral}
+U.~Kang, B.~Meeder, and C.~Faloutsos.
+\newblock Spectral analysis for billion-scale graphs: Discoveries and
+  implementation.
+\newblock In \emph{Pacific-Asia Conference on Knowledge Discovery and Data
+  Mining}, pages 13--25. Springer, 2011.
+
+\bibitem[Krishnamurthy and Wang(2000)]{krishnamurthy2000network}
+B.~Krishnamurthy and J.~Wang.
+\newblock On network-aware clustering of web clients.
+\newblock \emph{ACM SIGCOMM Computer Communication Review}, 30\penalty0
+  (4):\penalty0 97--110, 2000.
+
+\bibitem[Leskovec and Krevl(2014)]{snapnets}
+J.~Leskovec and A.~Krevl.
+\newblock {SNAP Datasets}: {Stanford} large network dataset collection.
+\newblock \url{http://snap.stanford.edu/data}, June 2014.
+
+\bibitem[Leskovec et~al.(2007{\natexlab{a}})Leskovec, Adamic, and
+  Huberman]{leskovec2007dynamics}
+J.~Leskovec, L.~A. Adamic, and B.~A. Huberman.
+\newblock The dynamics of viral marketing.
+\newblock \emph{ACM Transactions on the Web (TWEB)}, 1\penalty0 (1):\penalty0
+  5, 2007{\natexlab{a}}.
+
+\bibitem[Leskovec et~al.(2007{\natexlab{b}})Leskovec, Kleinberg, and
+  Faloutsos]{leskovec2007graph}
+J.~Leskovec, J.~Kleinberg, and C.~Faloutsos.
+\newblock Graph evolution: Densification and shrinking diameters.
+\newblock \emph{ACM Transactions on Knowledge Discovery from Data (TKDD)},
+  1\penalty0 (1):\penalty0 2, 2007{\natexlab{b}}.
+
+\bibitem[McGraw and Menzinger(2008)]{mcgraw2008laplacian}
+P.~N. McGraw and M.~Menzinger.
+\newblock Laplacian spectra as a diagnostic tool for network structure and
+  dynamics.
+\newblock \emph{Physical Review E}, 77\penalty0 (3):\penalty0 031102, 2008.
+
+\bibitem[Mislove et~al.(2007{\natexlab{a}})Mislove, Marcon, Gummadi, Druschel,
+  and Bhattacharjee]{mislove-2007-socialnetworks}
+A.~Mislove, M.~Marcon, K.~P. Gummadi, P.~Druschel, and B.~Bhattacharjee.
+\newblock {Measurement and Analysis of Online Social Networks}.
+\newblock In \emph{Proceedings of the 5th ACM/Usenix Internet Measurement
+  Conference (IMC'07)}, San Diego, CA, October 2007{\natexlab{a}}.
+
+\bibitem[Mislove et~al.(2007{\natexlab{b}})Mislove, Marcon, Gummadi, Druschel,
+  and Bhattacharjee]{mislove2007measurement}
+A.~Mislove, M.~Marcon, K.~P. Gummadi, P.~Druschel, and B.~Bhattacharjee.
+\newblock Measurement and analysis of online social networks.
+\newblock In \emph{Proceedings of the 7th ACM SIGCOMM conference on Internet
+  measurement}, pages 29--42. ACM, 2007{\natexlab{b}}.
+
+\bibitem[Neri and Schneider(2012)]{Neri2012}
+C.~Neri and L.~Schneider.
+\newblock Maximum {E}ntropy {D}istributions inferred from {O}ption {P}ortfolios
+  on an {A}sset.
+\newblock \emph{Finance and Stochastics}, 16\penalty0 (2):\penalty0 293--318,
+  2012.
+\newblock ISSN 1432-1122.
+
+\bibitem[Newman(2010)]{newman2010networks}
+M.~Newman.
+\newblock \emph{Networks}.
+\newblock Oxford University Press, 2010.
+
+\bibitem[Newman(2006{\natexlab{a}})]{newman2006finding}
+M.~E. Newman.
+\newblock Finding community structure in networks using the eigenvectors of
+  matrices.
+\newblock \emph{Physical review E}, 74\penalty0 (3):\penalty0 036104,
+  2006{\natexlab{a}}.
+
+\bibitem[Newman(2006{\natexlab{b}})]{newman2006modularity}
+M.~E. Newman.
+\newblock Modularity and community structure in networks.
+\newblock \emph{Proceedings of the national academy of sciences}, 103\penalty0
+  (23):\penalty0 8577--8582, 2006{\natexlab{b}}.
+
+\bibitem[Palla et~al.(2005)Palla, Der{\'e}nyi, Farkas, and
+  Vicsek]{palla2005uncovering}
+G.~Palla, I.~Der{\'e}nyi, I.~Farkas, and T.~Vicsek.
+\newblock Uncovering the overlapping community structure of complex networks in
+  nature and society.
+\newblock \emph{nature}, 435\penalty0 (7043):\penalty0 814, 2005.
+
+\bibitem[Press\'e et~al.(2013)Press\'e, Ghosh, Lee, and Dill]{Presse2013}
+S.~Press\'e, K.~Ghosh, J.~Lee, and K.~A. Dill.
+\newblock Principles of {M}aximum {E}ntropy and {M}aximum {C}aliber in
+  {S}tatistical {P}hysics.
+\newblock \emph{Reviews of Modern Physics}, 85:\penalty0 1115--1141, Jul 2013.
+
+\bibitem[Reddy et~al.(2002)Reddy, Kitsuregawa, Sreekanth, and
+  Rao]{reddy2002graph}
+P.~K. Reddy, M.~Kitsuregawa, P.~Sreekanth, and S.~S. Rao.
+\newblock A graph based approach to extract a neighborhood customer community
+  for collaborative filtering.
+\newblock In \emph{International Workshop on Databases in Networked Information
+  Systems}, pages 188--200. Springer, 2002.
+
+\bibitem[Shore and Johnson(1980)]{Shore1980}
+J.~Shore and R.~Johnson.
+\newblock Axiomatic {D}erivation of the {P}rinciple of {M}aximum {E}ntropy and
+  the {P}rinciple of {M}inimum {C}ross-{E}ntropy.
+\newblock \emph{IEEE Transactions on information theory}, 26\penalty0
+  (1):\penalty0 26--37, 1980.
+
+\bibitem[Takahashi et~al.(2012)Takahashi, Sato, Ferreira, and
+  Fujita]{takahashi2012discriminating}
+D.~Y. Takahashi, J.~R. Sato, C.~E. Ferreira, and A.~Fujita.
+\newblock Discriminating different classes of biological networks by analyzing
+  the graphs spectra distribution.
+\newblock \emph{PLoS One}, 7\penalty0 (12):\penalty0 e49949, 2012.
+
+\bibitem[Ubaru and Saad()]{ubaruapplications}
+S.~Ubaru and Y.~Saad.
+\newblock Applications of trace estimation techniques.
+
+\bibitem[Ubaru et~al.(2017)Ubaru, Chen, and Saad]{ubaru2017fast}
+S.~Ubaru, J.~Chen, and Y.~Saad.
+\newblock Fast estimation of tr(f(a)) via stochastic lanczos quadrature.
+\newblock \emph{SIAM Journal on Matrix Analysis and Applications}, 38\penalty0
+  (4):\penalty0 1075--1099, 2017.
+
+\bibitem[Van~Dam and Haemers(2003)]{van2003graphs}
+E.~R. Van~Dam and W.~H. Haemers.
+\newblock Which graphs are determined by their spectrum?
+\newblock \emph{Linear Algebra and its applications}, 373:\penalty0 241--272,
+  2003.
+
+\bibitem[Von~Luxburg(2007)]{von2007tutorial}
+U.~Von~Luxburg.
+\newblock A tutorial on spectral clustering.
+\newblock \emph{Statistics and computing}, 17\penalty0 (4):\penalty0 395--416,
+  2007.
+
+\bibitem[Watts and Strogatz(1998)]{watts1998collective}
+D.~J. Watts and S.~H. Strogatz.
+\newblock Collective dynamics of `small-world'networks.
+\newblock \emph{nature}, 393\penalty0 (6684):\penalty0 440, 1998.
+
+\bibitem[Yang and Leskovec(2015)]{yang2015defining}
+J.~Yang and J.~Leskovec.
+\newblock Defining and evaluating network communities based on ground-truth.
+\newblock \emph{Knowledge and Information Systems}, 42\penalty0 (1):\penalty0
+  181--213, 2015.
+
+\end{thebibliography}

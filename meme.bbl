@@ -1,0 +1,389 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Bandyopadhyay \bgroup et al\mbox.\egroup
+  }{2005}]{bandyopadhyay2005maximum}
+Bandyopadhyay, K.; Bhattacharya, A.~K.; Biswas, P.; and Drabold, D.
+\newblock 2005.
+\newblock Maximum entropy and the problem of moments: A stable algorithm.
+\newblock {\em Physical Review E} 71(5):057701.
+
+\bibitem[\protect\citeauthoryear{Bhatia}{2013}]{bhatia2013matrix}
+Bhatia, R.
+\newblock 2013.
+\newblock {\em Matrix analysis}, volume 169.
+\newblock Springer Science \& Business Media.
+
+\bibitem[\protect\citeauthoryear{Boutsidis \bgroup et al\mbox.\egroup
+  }{2017}]{boutsidis2017randomized}
+Boutsidis, C.; Drineas, P.; Kambadur, P.; Kontopoulou, E.-M.; and Zouzias, A.
+\newblock 2017.
+\newblock A randomized algorithm for approximating the log determinant of a
+  symmetric positive definite matrix.
+\newblock {\em Linear Algebra and its Applications} 533:95--117.
+
+\bibitem[\protect\citeauthoryear{Boyd and
+  Vandenberghe}{2009}]{boyd_vandenberghe_2009}
+Boyd, S.~P., and Vandenberghe, L.
+\newblock 2009.
+\newblock {\em Convex optimization}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Capocci \bgroup et al\mbox.\egroup
+  }{2005}]{capocci2005detecting}
+Capocci, A.; Servedio, V.~D.; Caldarelli, G.; and Colaiori, F.
+\newblock 2005.
+\newblock Detecting communities in large networks.
+\newblock {\em Physica A: Statistical Mechanics and its Applications}
+  352(2-4):669--676.
+
+\bibitem[\protect\citeauthoryear{Caticha}{2012}]{caticha2012entropic}
+Caticha, A.
+\newblock 2012.
+\newblock Entropic inference and the foundations of physics (monograph
+  commissioned by the 11th brazilian meeting on {B}ayesian
+  statistics--ebeb-2012.
+
+\bibitem[\protect\citeauthoryear{Chung}{1997}]{chung1997spectral}
+Chung, F.~R.
+\newblock 1997.
+\newblock {\em Spectral graph theory}.
+\newblock Number~92. American Mathematical Soc.
+
+\bibitem[\protect\citeauthoryear{Cover and Thomas}{2012}]{cover2012elements}
+Cover, T.~M., and Thomas, J.~A.
+\newblock 2012.
+\newblock {\em Elements of information theory}.
+\newblock John Wiley \& Sons.
+
+\bibitem[\protect\citeauthoryear{Cucuringu \bgroup et al\mbox.\egroup
+  }{2016}]{cucuringu2016simple}
+Cucuringu, M.; Koutis, I.; Chawla, S.; Miller, G.; and Peng, R.
+\newblock 2016.
+\newblock Simple and scalable constrained clustering: a generalized spectral
+  method.
+\newblock In {\em Artificial Intelligence and Statistics},  445--454.
+
+\bibitem[\protect\citeauthoryear{Davis \bgroup et al\mbox.\egroup
+  }{2007}]{davis2007information}
+Davis, J.~V.; Kulis, B.; Jain, P.; Sra, S.; and Dhillon, I.~S.
+\newblock 2007.
+\newblock Information-theoretic metric learning.
+\newblock In {\em Proceedings of the 24th international conference on Machine
+  learning},  209--216.
+\newblock ACM.
+
+\bibitem[\protect\citeauthoryear{De~Finetti}{1974}]{finetti}
+De~Finetti, B.
+\newblock 1974.
+\newblock Teoria delle probabilita. einaudi, turin, 1970.
+\newblock {\em English translation:[51]}.
+
+\bibitem[\protect\citeauthoryear{Dong \bgroup et al\mbox.\egroup
+  }{2017}]{dong2017scalable}
+Dong, K.; Eriksson, D.; Nickisch, H.; Bindel, D.; and Wilson, A.~G.
+\newblock 2017.
+\newblock Scalable log determinants for gaussian process kernel learning.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  6330--6340.
+
+\bibitem[\protect\citeauthoryear{Fitzsimons \bgroup et al\mbox.\egroup
+  }{2017}]{ete}
+Fitzsimons, J.; Granziol, D.; Cutajar, K.; Osborne, M.; Filippone, M.; and
+  Roberts, S.
+\newblock 2017.
+\newblock Entropic trace estimates for log determinants.
+
+\bibitem[\protect\citeauthoryear{Fox and Roberts}{2012}]{fox2012tutorial}
+Fox, C.~W., and Roberts, S.~J.
+\newblock 2012.
+\newblock A tutorial on variational bayesian inference.
+\newblock {\em Artificial intelligence review} 38(2):85--95.
+
+\bibitem[\protect\citeauthoryear{Gershgorin}{1931}]{gershgorin1931uber}
+Gershgorin, S.~A.
+\newblock 1931.
+\newblock {\"U}ber die {A}bgrenzung der {E}igenwerte einer {M}atrix.
+\newblock {\em Izvestija {A}kademii {N}auk {SSSR}, {S}erija {M}atematika}
+  (6):749--754.
+
+\bibitem[\protect\citeauthoryear{Giffin, Cafaro, and Ali}{2016}]{Giffin2016}
+Giffin, A.; Cafaro, C.; and Ali, S.~A.
+\newblock 2016.
+\newblock Application of the {M}aximum {R}elative {E}ntropy method to the
+  {P}hysics of {F}erromagnetic {M}aterials.
+\newblock {\em Physica A: Statistical Mechanics and its Applications} 455:11 --
+  26.
+
+\bibitem[\protect\citeauthoryear{Gong \bgroup et al\mbox.\egroup
+  }{2014}]{gong2014diverse}
+Gong, B.; Chao, W.-L.; Grauman, K.; and Sha, F.
+\newblock 2014.
+\newblock Diverse sequential subset selection for supervised video
+  summarization.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  2069--2077.
+
+\bibitem[\protect\citeauthoryear{Granziol and Roberts}{2017a}]{Granziol2017}
+Granziol, D., and Roberts, S.
+\newblock 2017a.
+\newblock An {I}nformation and {F}ield {T}heoretic approach to the {G}rand
+  {C}anonical {E}nsemble.
+
+\bibitem[\protect\citeauthoryear{Granziol and
+  Roberts}{2017b}]{DBLP:conf/bigdataconf/GranziolR17}
+Granziol, D., and Roberts, S.~J.
+\newblock 2017b.
+\newblock Entropic determinants of massive matrices.
+\newblock In {\em 2017 {IEEE} International Conference on Big Data, BigData
+  2017, Boston, MA, USA, December 11-14, 2017},  88--93.
+
+\bibitem[\protect\citeauthoryear{Han \bgroup et al\mbox.\egroup
+  }{2017}]{han2017faster}
+Han, I.; Kambadur, P.; Park, K.; and Shin, J.
+\newblock 2017.
+\newblock Faster greedy map inference for determinantal point processes.
+\newblock {\em arXiv preprint arXiv:1703.03389}.
+
+\bibitem[\protect\citeauthoryear{Han, Malioutov, and Shin}{2015}]{han2015large}
+Han, I.; Malioutov, D.; and Shin, J.
+\newblock 2015.
+\newblock Large-scale log-determinant computation through stochastic
+  {C}hebyshev expansions.
+\newblock In {\em International Conference on Machine Learning},  908--917.
+
+\bibitem[\protect\citeauthoryear{Jaynes}{1957a}]{Jaynes1957}
+Jaynes, E.~T.
+\newblock 1957a.
+\newblock Information theory and statistical mechanics.
+\newblock {\em Phys. Rev.} 106:620--630.
+
+\bibitem[\protect\citeauthoryear{Jaynes}{1957b}]{inftheoryjaynes}
+Jaynes, E.~T.
+\newblock 1957b.
+\newblock Information theory and statistical mechanics.
+\newblock {\em Phys. Rev.} 106:620--630.
+
+\bibitem[\protect\citeauthoryear{Jaynes}{1982}]{jaynes1982rationale}
+Jaynes, E.~T.
+\newblock 1982.
+\newblock On the rationale of maximum-entropy methods.
+\newblock {\em Proceedings of the IEEE} 70(9):939--952.
+
+\bibitem[\protect\citeauthoryear{Kang, Meeder, and
+  Faloutsos}{2011}]{kang2011spectral}
+Kang, U.; Meeder, B.; and Faloutsos, C.
+\newblock 2011.
+\newblock Spectral analysis for billion-scale graphs: Discoveries and
+  implementation.
+\newblock In {\em Pacific-Asia Conference on Knowledge Discovery and Data
+  Mining},  13--25.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Kang}{2013}]{kang2013fast}
+Kang, B.
+\newblock 2013.
+\newblock Fast determinantal point process sampling with application to
+  clustering.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  2319--2327.
+
+\bibitem[\protect\citeauthoryear{Kolmogorov}{1950}]{kolmogorov_1950}
+Kolmogorov, A.~N.
+\newblock 1950.
+\newblock On logical foundations of probability theory.
+\newblock {\em Lecture Notes in Mathematics Probability Theory and Mathematical
+  Statistics}  1--5.
+
+\bibitem[\protect\citeauthoryear{Kulesza}{2012}]{kulesza_2012}
+Kulesza, A.
+\newblock 2012.
+\newblock Determinantal point processes for machine learning.
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning}
+  5(2-3):123--286.
+
+\bibitem[\protect\citeauthoryear{Leskovec and Krevl}{2014}]{snapnets}
+Leskovec, J., and Krevl, A.
+\newblock 2014.
+\newblock {SNAP Datasets}: {Stanford} large network dataset collection.
+\newblock \url{http://snap.stanford.edu/data}.
+
+\bibitem[\protect\citeauthoryear{Li, Jegelka, and Sra}{2016}]{li2016fast}
+Li, C.; Jegelka, S.; and Sra, S.
+\newblock 2016.
+\newblock Fast dpp sampling for nystr$\backslash$" om with application to
+  kernel methods.
+\newblock {\em arXiv preprint arXiv:1603.06052}.
+
+\bibitem[\protect\citeauthoryear{Lin, Saad, and
+  Yang}{2016}]{lin2016approximating}
+Lin, L.; Saad, Y.; and Yang, C.
+\newblock 2016.
+\newblock Approximating spectral densities of large matrices.
+\newblock {\em SIAM Review} 58(1):34--65.
+
+\bibitem[\protect\citeauthoryear{Liu \bgroup et al\mbox.\egroup
+  }{2013}]{liu2013large}
+Liu, J.; Wang, C.; Danilevsky, M.; and Han, J.
+\newblock 2013.
+\newblock Large-scale spectral clustering on graphs.
+\newblock In {\em Proceedings of the Twenty-Third international joint
+  conference on Artificial Intelligence},  1486--1492.
+\newblock AAAI Press.
+
+\bibitem[\protect\citeauthoryear{Macchi}{1975}]{macchi1975coincidence}
+Macchi, O.
+\newblock 1975.
+\newblock The coincidence approach to stochastic point processes.
+\newblock {\em Advances in Applied Probability} 7(1):83--122.
+
+\bibitem[\protect\citeauthoryear{MacKay}{1992}]{mackay1992bayesian}
+MacKay, D.~J.
+\newblock 1992.
+\newblock {\em Bayesian methods for adaptive models}.
+\newblock Ph.D. Dissertation, California Institute of Technology.
+
+\bibitem[\protect\citeauthoryear{MacKay}{2003}]{mackay2003information}
+MacKay, D.~J.
+\newblock 2003.
+\newblock {\em Information theory, inference and learning algorithms}.
+\newblock Cambridge university press.
+
+\bibitem[\protect\citeauthoryear{McGraw and
+  Menzinger}{2008}]{mcgraw2008laplacian}
+McGraw, P.~N., and Menzinger, M.
+\newblock 2008.
+\newblock Laplacian spectra as a diagnostic tool for network structure and
+  dynamics.
+\newblock {\em Physical Review E} 77(3):031102.
+
+\bibitem[\protect\citeauthoryear{Mead and Papanicolaou}{1984}]{mead1984maximum}
+Mead, L.~R., and Papanicolaou, N.
+\newblock 1984.
+\newblock Maximum entropy in the problem of moments.
+\newblock {\em Journal of Mathematical Physics} 25(8):2404--2417.
+
+\bibitem[\protect\citeauthoryear{Neri and Schneider}{2012}]{Neri2012}
+Neri, C., and Schneider, L.
+\newblock 2012.
+\newblock Maximum {E}ntropy {D}istributions inferred from {O}ption {P}ortfolios
+  on an {A}sset.
+\newblock {\em Finance and Stochastics} 16(2):293--318.
+
+\bibitem[\protect\citeauthoryear{Newman}{2006}]{newman2006finding}
+Newman, M.~E.
+\newblock 2006.
+\newblock Finding community structure in networks using the eigenvectors of
+  matrices.
+\newblock {\em Physical review E} 74(3):036104.
+
+\bibitem[\protect\citeauthoryear{Press\'e \bgroup et al\mbox.\egroup
+  }{2013}]{Presse2013}
+Press\'e, S.; Ghosh, K.; Lee, J.; and Dill, K.~A.
+\newblock 2013.
+\newblock Principles of {M}aximum {E}ntropy and {M}aximum {C}aliber in
+  {S}tatistical {P}hysics.
+\newblock {\em Reviews of Modern Physics} 85:1115--1141.
+
+\bibitem[\protect\citeauthoryear{Rasmussen and Williams}{2006}]{Rasmussen2006}
+Rasmussen, C.~E., and Williams, C.
+\newblock 2006.
+\newblock {\em {Gaussian Processes for Machine Learning}}.
+\newblock MIT Press.
+
+\bibitem[\protect\citeauthoryear{Rasmussen}{2006}]{rasmussen2006gaussian}
+Rasmussen, C.~E.
+\newblock 2006.
+\newblock Gaussian processes for machine learning.
+
+\bibitem[\protect\citeauthoryear{Rue and Held}{2005}]{rue2005gaussian}
+Rue, H., and Held, L.
+\newblock 2005.
+\newblock {\em Gaussian Markov random fields: theory and applications}.
+\newblock CRC press.
+
+\bibitem[\protect\citeauthoryear{Shore and Johnson}{1980}]{Shore1980}
+Shore, J., and Johnson, R.
+\newblock 1980.
+\newblock Axiomatic {D}erivation of the {P}rinciple of {M}aximum {E}ntropy and
+  the {P}rinciple of {M}inimum {C}ross-{E}ntropy.
+\newblock {\em IEEE Transactions on information theory} 26(1):26--37.
+
+\bibitem[\protect\citeauthoryear{Ubaru and Saad}{}]{ubaruapplications}
+Ubaru, S., and Saad, Y.
+\newblock Applications of trace estimation techniques.
+
+\bibitem[\protect\citeauthoryear{Ubaru, Chen, and Saad}{2016}]{Ubaru2016}
+Ubaru, S.; Chen, J.; and Saad, Y.
+\newblock 2016.
+\newblock Fast {E}stimation of tr (f (a)) via {S}tochastic {L}anczos
+  {Q}uadrature.
+
+\bibitem[\protect\citeauthoryear{Ubaru, Chen, and Saad}{2017}]{ubaru2017fast}
+Ubaru, S.; Chen, J.; and Saad, Y.
+\newblock 2017.
+\newblock Fast estimation of tr(f(a)) via stochastic {L}anczos quadrature.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications}
+  38(4):1075--1099.
+
+\bibitem[\protect\citeauthoryear{Van~Aelst and
+  Rousseeuw}{2009}]{van2009minimum}
+Van~Aelst, S., and Rousseeuw, P.
+\newblock 2009.
+\newblock Minimum volume ellipsoid.
+\newblock {\em Wiley Interdisciplinary Reviews: Computational Statistics}
+  1(1):71--82.
+
+\bibitem[\protect\citeauthoryear{Von~Luxburg}{2007}]{von2007tutorial}
+Von~Luxburg, U.
+\newblock 2007.
+\newblock A tutorial on spectral clustering.
+\newblock {\em Statistics and computing} 17(4):395--416.
+
+\bibitem[\protect\citeauthoryear{Wachinger and
+  Golland}{2015}]{wachinger2015sampling}
+Wachinger, C., and Golland, P.
+\newblock 2015.
+\newblock Sampling from determinantal point processes for scalable manifold
+  learning.
+\newblock In {\em International Conference on Information Processing in Medical
+  Imaging},  687--698.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Wainwright and
+  Jordan}{2006}]{wainwright2006log}
+Wainwright, M.~J., and Jordan, M.~I.
+\newblock 2006.
+\newblock Log-determinant relaxation for approximate inference in discrete
+  markov random fields.
+\newblock {\em IEEE transactions on signal processing} 54(6):2099--2109.
+
+\bibitem[\protect\citeauthoryear{Walley}{1991a}]{bayesianspecialcase}
+Walley, P.
+\newblock 1991a.
+\newblock Statistical reasoning with imprecise probabilities.
+
+\bibitem[\protect\citeauthoryear{Walley}{1991b}]{walley_1991}
+Walley, P.
+\newblock 1991b.
+\newblock {\em Statistical reasoning with imprecise probabilities}.
+\newblock Chapman and Hall.
+
+\bibitem[\protect\citeauthoryear{Yap, Raveendran, and
+  Ong}{2001}]{yap2001chebyshev}
+Yap, P.; Raveendran, P.; and Ong, S.
+\newblock 2001.
+\newblock Chebyshev moments as a new set of moments for image reconstruction.
+\newblock In {\em Neural Networks, 2001. Proceedings. IJCNN'01. International
+  Joint Conference on}, volume~4,  2856--2860.
+\newblock IEEE.
+
+\bibitem[\protect\citeauthoryear{Zhang and
+  Leithead}{2007}]{zhang2007approximate}
+Zhang, Y., and Leithead, W.~E.
+\newblock 2007.
+\newblock Approximate implementation of the logarithm of the matrix determinant
+  in gaussian process regression.
+\newblock {\em Journal of Statistical Computation and Simulation}
+  77(4):329--348.
+
+\end{thebibliography}

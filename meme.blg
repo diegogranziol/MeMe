@@ -1,0 +1,258 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: meme.aux
+The style file: aaai.bst
+Database file #1: sample.bib
+I was expecting a `,' or a `}'---line 459 of file sample.bib
+ :  
+ :  year =      {2001},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1048 of file sample.bib
+ : @book{boyd_vandenberghe_2009
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1639 of file sample.bib
+ : @inproceedings{davis2007information
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1654 of file sample.bib
+ : @article{wainwright2006log
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1706 of file sample.bib
+ : @article{han2017faster
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1714 of file sample.bib
+ : @inproceedings{yap2001chebyshev
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1724 of file sample.bib
+ : @article{ubaru2017fast
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1752 of file sample.bib
+ : @article{macchi1975coincidence
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1762 of file sample.bib
+ : @inproceedings{wachinger2015sampling
+ :                                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1770 of file sample.bib
+ : @article{mead1984maximum
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1781 of file sample.bib
+ : @article{li2016fast
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1787 of file sample.bib
+ : @inproceedings{kang2013fast
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1795 of file sample.bib
+ : @inproceedings{gong2014diverse
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1804 of file sample.bib
+ : @article{gershgorin1931uber
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1815 of file sample.bib
+ : @article{kulesza_2012
+ :                      , title={Determinantal Point Processes for Machine Learning}, volume={5}, DOI={10.1561/2200000044}, number={2-3}, journal={Foundations and Trends® in Machine Learning}, author={Kulesza, Alex}, year={2012}, pages={123–286}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 1824 of file sample.bib
+ : @inproceedings{han2015large
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1831 of file sample.bib
+ : @inproceedings{dong2017scalable
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1838 of file sample.bib
+ : @phdthesis{mackay1992bayesian
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1844 of file sample.bib
+ : @inproceedings{DBLP:conf/bigdataconf/GranziolR17
+ :                                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1861 of file sample.bib
+ : @article{boutsidis2017randomized
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1872 of file sample.bib
+ : @article{zhang2007approximate
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1886 of file sample.bib
+ : @book{rue2005gaussian
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1892 of file sample.bib
+ : @book{mackay2003information
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1898 of file sample.bib
+ : @inproceedings{davis2007information
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1906 of file sample.bib
+ : @article{van2009minimum
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1916 of file sample.bib
+ : @article{wainwright2006log
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1936 of file sample.bib
+ : @article{fox2012tutorial
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1975 of file sample.bib
+ : @misc{caticha2012entropic
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2216 of file sample.bib
+ : @article{rasmussen2006gaussian
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2229 of file sample.bib
+ : @book{cover2012elements
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2253 of file sample.bib
+ : @misc{ete
+ :          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2272 of file sample.bib
+ : @article{jaynes1982rationale
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2342 of file sample.bib
+ : @book{boyd_vandenberghe_2009
+ :                             , place={Cambridge}, title={Convex optimization}, publisher={Cambridge University Press}, author={Boyd, Stephen P. and Vandenberghe, Lieven}, year={2009}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 2344 of file sample.bib
+ : @book{boyd_vandenberghe_2009
+ :                             , place={Cambridge}, title={Convex optimization}, publisher={Cambridge University Press}, author={Boyd, Stephen P. and Vandenberghe, Lieven}, year={2009}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 2428 of file sample.bib
+ : @article{bandyopadhyay2005maximum
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2520 of file sample.bib
+ : @article{Jaynes1957
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2556 of file sample.bib
+ : @article{Neri2012
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2580 of file sample.bib
+ : @article{Giffin2016
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2597 of file sample.bib
+ : @article{Shore1980
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2622 of file sample.bib
+ : @article{Presse2013
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2675 of file sample.bib
+ : @misc{Granziol2017
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2702 of file sample.bib
+ : @book{Rasmussen2006
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2798 of file sample.bib
+ : @article{Ubaru2016
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2855 of file sample.bib
+ : @book{walley_1991
+ :                  , place={London}, title={Statistical reasoning with imprecise probabilities}, publisher={Chapman and Hall}, author={Walley, Peter}, year={1991}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 2978 of file sample.bib
+ : @inproceedings{davis2007information
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2993 of file sample.bib
+ : @article{wainwright2006log
+ :                           ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 3023 of file sample.bib
+ : @article{encyclopedia 
+ :                       of research design, title={Teoria Statistica Delle Classi e Calcolo Delle Probabilità}, DOI={10.4135/9781412961288.n455}, journal={Encyclopedia of Research Design}}
+I'm skipping whatever remains of this entry
+Repeated entry---line 3025 of file sample.bib
+ : @article{finetti
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 3032 of file sample.bib
+ : @article{bayesianspecialcase
+ :                             , title={Statistical Reasoning with Imprecise Probabilities}, DOI={10.1007/978-1-4899-3472-7}, author={Walley, Peter}, year={1991}
+I'm skipping whatever remains of this entry
+Repeated entry---line 3035 of file sample.bib
+ : @article{kolmogorov_1950
+ :                         , title={On Logical Foundations of Probability Theory}, DOI={10.1007/bfb0072897}, journal={Lecture Notes in Mathematics Probability Theory and Mathematical Statistics}, author={Kolmogorov, A. N.}, year={1950}, pages={1–5}
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "DBLP:conf/bigdataconf/GranziolR17"
+refers to entry "DBLP:conf/bigdataconf/2017", which doesn't exist
+Warning--I didn't find a database entry for "DBLP:conf/bigdataconf/2017"
+Warning--there's a number but no series in chung1997spectral
+Warning--there's a number but no volume in gershgorin1931uber
+Warning--empty journal in rasmussen2006gaussian
+Warning--empty year in ubaruapplications
+Warning--empty journal in ubaruapplications
+Warning--empty journal in Ubaru2016
+Warning--empty journal in bayesianspecialcase
+You've used 55 entries,
+            2568 wiz_defined-function locations,
+            887 strings with 13162 characters,
+and the built_in function-call counts, 21846 in all, are:
+= -- 2365
+> -- 781
+< -- 15
++ -- 262
+- -- 254
+* -- 1690
+:= -- 3495
+add.period$ -- 273
+call.type$ -- 55
+change.case$ -- 338
+chr.to.int$ -- 52
+cite$ -- 62
+duplicate$ -- 877
+empty$ -- 1596
+format.name$ -- 342
+if$ -- 4528
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 58
+newline$ -- 330
+num.names$ -- 165
+pop$ -- 314
+preamble$ -- 1
+purify$ -- 402
+quote$ -- 0
+skip$ -- 724
+stack$ -- 0
+substring$ -- 1216
+swap$ -- 219
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 408
+warning$ -- 7
+while$ -- 188
+width$ -- 60
+write$ -- 750
+(There were 51 error messages)
