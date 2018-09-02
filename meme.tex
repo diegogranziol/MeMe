@@ -15,6 +15,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{booktabs}
+\usepackage{color}
 %\usepackage[demo]{graphicx}
 %\usepackage{caption}
 %\usepackage{subcaption}
@@ -92,7 +93,7 @@ with respect to $p(\lambda)$, where $ \mathbb{E}_{p}[ \lambda^{i}]= \mu_{i}$ are
 %\end{equation}
 
 
-\subsection{Variational Inference as a special case of MaxEnt}
+\subsection{Variational Inference}
 Variational Methods \cite{mackay2003information,fox2012tutorial} in machine learning pose the problem of intractable density estimation from the application of Bayes' rule as a functional optimization problem,
 \begin{equation}
 p(z|x) = \frac{p(x|z)p(z)}{p(x)} \approx q(z),
@@ -112,7 +113,7 @@ Hence maximising the evidence lower bound is equivalent to minimising the revers
 \end{equation}
 leading to a Gibbs' distribution and an iterative update equation. 
 
-\subsection{Log Determinant as a Variational Inference problem}
+\subsection{MaxEnt as Constrained Variational Inference}
 \label{method}
 We consider minimizing the reverse KL divergence between our surrogate posterior $q(\lambda)$ and our prior $p_{0}(\lambda)$ on the eigenspectrum, 
 \begin{equation}
@@ -140,11 +141,9 @@ In the field of information physics the minimization of Equation \eqref{eq:maxre
 \end{enumerate}
 These lead to the generalised entropic functional,
 \begin{equation}
--\int q(x)\log\frac{q(x)}{m(x)}dx - \sum_{i}\alpha_{i}\bigg(\int_{x\in \mathcal{D}}f_{i}(x)dx-\mu_{i}\bigg).
+-\int q(x)\log\frac{q(x)}{p_{0}(x)}dx - \sum_{i}\alpha_{i}\bigg(\int_{x\in \mathcal{D}}q(x)f_{i}(x)dx-\mu_{i}\bigg).
 \end{equation}
-Here the justification for restricting ourselves to a functional is derived from considering the set of all distributions $q_{i}(\lambda)$ compatible with the constraints and devising a transitive ranking scheme.  It can be shown, further, that Newton's laws, non-relativistic quantum mechanics and Bayes' rule can all be derived under this formalism.  
-
-In the case of a flat prior over the spectral domain, we reduce to the method of maximum entropy with moment constraints \cite{jaynes1982rationale,inftheoryjaynes}. Conditions for the existence of a solution to this problem have been proved for the case of the Hausdorff moment conditions \cite{mead1984maximum}, of which our problem is a special case. 
+Here the justification for restricting ourselves to a functional is derived from considering the set of all distributions $q_{i}(\lambda)$ compatible with the constraints and devising a transitive ranking scheme.  It can be shown, further, that Newton's laws, non-relativistic quantum mechanics and Bayes' rule can all be derived under this formalism. In the case of a flat prior over the spectral domain, we reduce to the method of maximum entropy with moment constraints \cite{jaynes1982rationale,inftheoryjaynes}.  
 
 \subsection{Algorithm}
 \label{algorithm}
@@ -164,12 +163,10 @@ and Hessian
 A common hindrance, appearing in Gaussian graphical models, Gaussian Processes \cite{rue2005gaussian,rasmussen2006gaussian}, sampling, variational inference \cite{mackay2003information}, metric/kernel learning \cite{davis2007information,van2009minimum}, Markov random fields \cite{wainwright2006log}, Determinantal Point Processes (DPP's) and Bayesian Neural networks \cite{mackay1992bayesian}, is the calculation of the log determinant of a large positive definite matrix. For a large positive definite matrix $K \in  \mathcal{R}^{n\times n}$, the canonical solution involves the Cholesky decomposition, $K = LL^{T}$. The log determinant is then trivial to calculate as $\log \mathrm{Det}(K) = 2\sum_{i=1}^{n}\log L_{ii}$. This computation invokes a computational complexity $\mathcal{O}(n^{3})$ and storage complexity $\mathcal{O}(n^{2})$ and is thus unfit for purpose for $n>10^{4}$, i.e. even a small sample set in the age of big data. 
 \subsection{Related Work}
 Recent work in machine learning combined stochastic trace estimation with Taylor approximations for Gaussian process parameter learning \cite{zhang2007approximate, boutsidis2017randomized}, %reducing the computational cost to matrix vector multiplications (MVMs), $\mathcal{O}(n^{2})$ for a dense matrix and $\mathcal{O}(nnz)$\footnote{Number of non zeros.} for a sparse matrix. 
-Further developments included improved performance using Chebyshev polynomials \cite{han2015large} and Lanczos techniques with structured kernel interpolation (SKI) in order to accelerate MVMs to $\mathcal{O}(n+i\log i)$, where $i$ is the number of inducing points \cite{dong2017scalable}. 
-
-This approach relies on an extension of Kronecker and Toeplitz methods, which are limited to low dimensional (typically $D \leq 5$) data, which cannot be assumed in general.  Secondly, whilst Lanczos methods have a convergence rate of double that of the Chebyshev approaches, the derived bounds require $\mathcal{O}(\sqrt{\kappa})$ Lanczos steps \cite{Ubaru2016}, where $\kappa$ is the matrix condition number. In many practical cases of interest $\kappa > 10^{10}$ and thus the large number of $m$ matrix vector multiplications becomes prohibitive. 
+Further developments included improved performance using Chebyshev polynomials \cite{han2015large} and Lanczos techniques with structured kernel interpolation (SKI) in order to accelerate MVMs to $\mathcal{O}(n+i\log i)$, where $i$ is the number of inducing points \cite{dong2017scalable}. SKI relies on an extension of Kronecker and Toeplitz methods, which are limited to low dimensional (typically $D \leq 5$) data, which cannot be assumed in general.  Secondly, whilst Lanczos methods have a convergence rate of double that of the Chebyshev approaches, the derived bounds require $\mathcal{O}(\sqrt{\kappa})$ Lanczos steps \cite{Ubaru2016}, where $\kappa$ is the matrix condition number. In many practical cases of interest $\kappa > 10^{10}$ and thus the large number of $m$ matrix vector multiplications becomes prohibitive. 
 We restrict ourselves to the high-dimensional, high-condition number, big data limit. 
 
-\subsection{Log Determinants as a Density Estimation Problem}
+\subsection{Log Determinants as a Spectral Estimation Problem}
 Any symmetric positive definite (PD) matrix $K$, is diagonalizable by a unitary transformation $U$, i.e $K = U^{t}DU$, where $D$ is the matrix with the eigenvalues of $K$ along the diagonal. Hence we can write the log determinant as:
 \begin{equation}
 \log \text{Det} K = \log \prod_{i}\lambda_{i} = \sum_{i=1}^{n}\log\lambda_{i} = n\mathbb{E}_{\mu}(\log \lambda).
@@ -325,10 +322,10 @@ In \cite{Granziol2017} it was proven that the addition of an extra constraint ca
 	\end{subfigure}
 	\caption{Comparison of VBALD against Taylor, Lanczos and Chebyshev algorithms for calculating the log determinant of synthetic squared exponential kernel matrices of different condition number. The absolute relative error is on the $y$-axis and number of moments used on the $x$-axis.}
 \end{figure}
-We simulate the kernel matrices from a Gaussian/Determinental Point Process \cite{Rasmussen2006}, by generating a typical squared exponential kernel matrix $K \in \mathbb{R}^{n \times n}$ using the Python GPy package with $6$ dimensional, Gaussian inputs. We then add noise of variance $10^{-8}$ along the diagonals. We employ a variety of realistic uniform length-scales. We use $m=30$ Moments, $d=50$ Hutchinson probe vectors and compare our novel MaxEnt algorithm against the Taylor approximation, Chebyshev \cite{han2015large} and Lanczos \cite{ubaru2017fast} in Table \ref{table1}. We see that for low condition numbers (Figure \ref{fig:lscale0.1}) The benefit of framing the log determinant as an optimization problem is marginal, whereas for large condition numbers (Figures \ref{fig:lscale0.33}) the benefits are substantial, with orders of magnitude better results than competing methods. We also provide the number of Chebyshev and Lanczos steps required to achieve similar performance. 
+We simulate the kernel matrices from a Gaussian/Determinental Point Process \cite{Rasmussen2006}, by generating a typical squared exponential kernel matrix $K \in \mathbb{R}^{n \times n}$ using the Python GPy package with $6$ dimensional, Gaussian inputs. We then add noise of variance $10^{-8}$ along the diagonals. We employ a variety of realistic uniform length-scales. We use $m=30$ Moments, $d=50$ Hutchinson probe vectors and compare our novel MaxEnt algorithm against the Taylor approximation, Chebyshev \cite{han2015large} and Lanczos \cite{ubaru2017fast} in Table \ref{table:errortable}. We see that for low condition numbers (Figure \ref{fig:lscale0.1}) The benefit of framing the log determinant as an optimization problem is marginal, whereas for large condition numbers (Figures \ref{fig:lscale0.33}) the benefits are substantial, with orders of magnitude better results than competing methods. We also provide the number of Chebyshev and Lanczos steps required to achieve similar performance. 
 \begin{table}[t]
-	\label{table1}
-	\caption{Absolute relative error for VBALD, Chebyshev \& Lanczos methodson varying length-scale $l$, with varying condition number $\kappa$ on squared exponential kernel matrices $K \in \mathbb{R}^{1000\times 1000}$.}
+	\label{table:errortable}
+	\caption{Absolute relative error for MaxEnt, Chebyshev \& Lanczos methodson varying length-scale $l$, with varying condition number $\kappa$ on squared exponential kernel matrices $K \in \mathbb{R}^{1000\times 1000}$.}
 	\label{sample-table}
 	\vskip 0.15in
 	\begin{center}
@@ -336,7 +333,7 @@ We simulate the kernel matrices from a Gaussian/Determinental Point Process \cit
 			\begin{sc}
 				\begin{tabular}{lcccr}
 					\toprule
-					$\kappa$ & $l$ & VBALD & Chebyshev & Lanczos \\
+					$\kappa$ & $l$ & MaxEnt & Chebyshev & Lanczos \\
 					\midrule
 					$3\times10^{1}$    & 0.05& \bf{0.0014}& 0.0037 & 0.0024 \\
 					$1.1\times10^{3}$ & 0.15& 0.0522& \bf{0.0104} & 0.0024\\
@@ -389,11 +386,8 @@ We simulate the kernel matrices from a Gaussian/Determinental Point Process \cit
 %\end{table}
 
 \section{Machine Learning Application 1: DPPs}
-Determinantal point processes (DPPs) \cite{macchi1975coincidence} are probabilistic models capturing global negative correlations. They describe Fermions \footnote{as a consequence of the spin-statistics theorem} in Quantum Physics, Eigenvalues of random matrices and non-intersecting random walks. 
-
-In machine learning their natural selection of diversity has found applications in the field of summarization \cite{gong2014diverse}, human pose detection \cite{kulesza_2012}, clustering \cite{kang2013fast}, Low rank kernel matrix approximations \cite{li2016fast} and Manifold learning \cite{wachinger2015sampling}.
-
-Formally, it defines a distribution on $2^{y}$, where $y = [n]$ is the finite ground set. For a random variable $X \subseteq Y$ drawn from a given DPP we have
+Determinantal point processes (DPPs) \cite{macchi1975coincidence} are probabilistic models capturing global negative correlations. %They describe Fermions \footnote{as a consequence of the spin-statistics theorem} in Quantum Physics, Eigenvalues of random matrices and non-intersecting random walks. 
+In machine learning their natural selection of diversity has found applications in the field of summarization \cite{gong2014diverse}, human pose detection \cite{kulesza_2012}, clustering \cite{kang2013fast}, Low rank kernel matrix approximations \cite{li2016fast} and Manifold learning \cite{wachinger2015sampling}. Formally, it defines a distribution on $2^{y}$, where $y = [n]$ is the finite ground set. For a random variable $X \subseteq Y$ drawn from a given DPP we have
 \begin{equation}
 P(X = x) \propto \mathrm{det}(K_{X}) = \frac{\mathrm{det}(K_{x})}{\mathrm{det}(K+I)},
 \end{equation}
@@ -402,7 +396,8 @@ where $K \in
 \begin{equation}
 \log \mathrm{det} K_{X\cup\{i\}} - \log \mathrm{det} L_{X}.
 \end{equation}
-with $\mathcal{O}(n^{3})$ computational complexity. Previous work has looked at limiting the burden of the computational complexity by employed Chebyshev approximations to the Log Determinant \cite{han2017faster}. However their work is limited Kernel Matrices with minimum eigenvalues of $10^{-3}$\footnote{or alternatively low condition numbers}, which does not cover the class of realistic kernel matrix spectra, notably the popular squared exponential kernel. We develop a method in section \ref*{method} and an algorithm \ref{algorithm} which is capable of handling very high condition numbered matrices.
+%with $\mathcal{O}(n^{3})$ computational complexity. Previous work has looked at limiting the burden of the computational complexity by employed Chebyshev approximations to the Log Determinant \cite{han2017faster}. However their work is limited Kernel Matrices with minimum eigenvalues of $10^{-3}$\footnote{or alternatively low condition numbers}, which does not cover the class of realistic kernel matrix spectra, notably the popular squared exponential kernel. We develop a method in section \ref*{method} and an algorithm \ref{algorithm} which is capable of handling very high condition numbered matrices.
+{\color{red}{ADD DPP EXPERIMENT HERE}}
 
 
 
@@ -415,9 +410,7 @@ with $\mathcal{O}(n^{3})$ computational complexity. Previous work has looked at 
 \section{Machine Learning Application 2: Learning Cluster Number}
 For most clustering algorithms, including spectral clustering, estimating the number of clusters is a challenging problem \citep{von2007tutorial}, with likelihood, ad-hoc, information theoretic, stability and spectral approaches advocated. For many large scale spectral approaches, the number of clusters is taken as a given input 
 %check the second one here, that k really is an input
-\cite{liu2013large},\cite{cucuringu2016simple}. 
-
-In the latter, one analyses the spectral gap in the eigenvalue spectrum, which we refer to as \emph{eigengap} for short. Applying this approach in the era of big-data (where social networks such as Facebook are approaching $n = 2\times 10^9$ users) means that standard approaches, such as the canonical Cholesky decomposition, with computational complexity $\mathcal{O}(n^{3})$  and storage $\mathcal{O}(n^{2})$ are completely prohibitive. 
+\cite{liu2013large},\cite{cucuringu2016simple}. In the latter, one analyses the spectral gap in the eigenvalue spectrum, which we refer to as \emph{eigengap} for short. Applying this approach in the era of big-data (where social networks such as Facebook are approaching $n = 2\times 10^9$ users) means that standard approaches, such as the canonical Cholesky decomposition, with computational complexity $\mathcal{O}(n^{3})$  and storage $\mathcal{O}(n^{2})$ are completely prohibitive. 
 %\subsection{Related Work} 
 %\label{relatedwork}
 %Krylov subspace methods, using matrix vector products, such as the Lanczos algorithm have been applied to estimating eigengaps and detecting communities with encouraging results \citep{{ubaruapplications},{kang2011spectral}}.
@@ -482,11 +475,7 @@ In the latter, one analyses the spectral gap in the eigenvalue spectrum, which w
 %\]
 %As is the case for all block diagonal matrices, the spectrum of $L$ is given by the union of the spectra $L_{i}$. From the proceeding we know that every Laplacian $L_{i}$ has an eigenvalue $0$ with multipicity $1$, hence $L$ has eigenvalue $0$ with multiplicity $k$ and corresponding eigenvectors of $L$ are those of $L_{i}$ filled with $0$ at the positions of the other blocks.
 
-It is well known \cite{von2007tutorial}, that the multiplicity of the $0$ eigenvalue is equal to the number of disconnected components in the graph. Hence were we to define a community as a completely disconnected component, we could simply count the number of $0$ eigenvalues. However given that real world networks are rarely completely disconnected, this procedure would be of little practical utility. 
-
-
-We hence adopt a looser definition of the word cluster and consider groups of nodes containing far greater intra-group connections than inter-group connections. %This conforms to our natural intuition of a group or community.  
-
+It is well known \cite{von2007tutorial}, that the multiplicity of the $0$ eigenvalues is equal to the number of disconnected components in the graph. Hence were we to define a community as a completely disconnected component, we could simply count the number of $0$ eigenvalues. However given that real world networks are rarely completely disconnected, this procedure would be of little practical utility. We hence adopt a looser definition of the word cluster and consider groups of nodes containing far greater intra-group connections than inter-group connections. %This conforms to our natural intuition of a group or community.  
 If the graph is connected, but consists of $k$ subgraphs which are ``weakly'' linked to each other, the unnormalized Laplacian has one zero eigenvalue and all the other eigenvalues positive. 
 This is easily seen by looking at
 \begin{equation}
@@ -909,6 +898,8 @@ From the monotonicity of the function $\log(x)$, we have that  $\log(x) \leq \mb
 \epsilon \leq \mbox{max}[|\log(x_{max})|,|\log(x_{min})|]\sqrt{2\mathcal{D}_{kl}(P\|Q)}.
 \end{equation}
 We thus note that by reducing the self entropy of the proposal distribution $q(x)$ we necessarily reduce the maximum possible error of the log determinant estimation. However, given that we do not have an analytic form of $p(x)$, we cannot explicitly calculate $\mathcal{D}_{kl}(P\|Q)$ and hence the bound in its current form is not inherently practical. We leave the estimation of this term and derivation of estimate uncertainty to future work.
+
+Conditions for the existence of a solution to this problem have been proved for the case of the Hausdorff moment conditions \cite{mead1984maximum}, of which our problem is a special case.
 
 \section*{Acknowledgements}
 
