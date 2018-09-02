@@ -189,6 +189,7 @@ Here $\lambda_{u} = \text{arg max}_{i}(\sum_{j=1}^{n}|K_{ij}|)$, i.e the max sum
 \end{equation}
 as the spectral density $p(\lambda)$ is $0$ outside of its bounds, which are bounded by $[0,1]$ respectively.
 \subsection{Stochastic Trace Estimation}
+\label{stochastictrace}
 Using the expectation of quadratic forms, for any multivariate random variable $v$ with mean $m$ and variance $\Sigma$, we can write 
 \begin{equation}
 \mathbb{E}(zz^{t}) = mm^{t}+\Sigma \xrightarrow[m = 0]{\Sigma = I} I,
@@ -272,7 +273,8 @@ where we take the product of the matrix $K$ with the vector $z_{j}$, $m$ times, 
 \end{algorithm}
 
 \section{Experiments}
-For simplicity we have kept all the formula's in terms of power moments, however we find vastly improved performance and conditioning when we switch to another polynomial basis. Many alternative and orthogonal Polynomial bases exist (so that the errors between moment estimations are uncorrelated), we implement both Chebyshev and Legendre moments in our Lagrangian and find similar performance for both. The use of Chebyshev moments in Machine Learning and Computer Vision has been reported to be of practical siginifcance previously \cite{yap2001chebyshev}. We use Python's SciPy minimize standard newton-conjugate gradient algorithm to solve the objective, given the gradient and hessian to within a gradient tolerance $gtol$. To make the Hessian better conditioned so as to achieve convergence we add jitter $1e-8$ along the diagonal. The pseudo code is given in Algorithm \ref{alg:maxent}. The Log Determinant is then calculated using Algorithm \ref{alg:logdet}.
+\label{experiments}
+For simplicity we have kept all the formula's in terms of power moments, however we find vastly improved performance and conditioning when we switch to another polynomial basis. Many alternative and orthogonal Polynomial bases exist (so that the errors between moment estimations are uncorrelated), we implement both Chebyshev and Legendre moments in our Lagrangian and find similar performance for both. The use of Chebyshev moments in Machine Learning and Computer Vision has been reported to be of practical siginifcance previously \cite{yap2001chebyshev}. We use Python's SciPy minimize standard newton-conjugate gradient algorithm to solve the objective, given the gradient and hessian to within a gradient tolerance $gtol$. To make the Hessian better conditioned so as to achieve convergence we add jitter $1e-8$ along the diagonal. We use a grid size of $1e-4$ for the quadrature. The pseudo code is given in Algorithm \ref{alg:maxent}. The Log Determinant is then calculated using Algorithm \ref{alg:logdet}.
 
 \subsection{Comparison to Previous MaxEnt algorithm}
 In \cite{Granziol2017} it was proven that the addition of an extra constraint cannot increase the entropy of the MaxEnt solution. For the problem of log determinants, this signifies that the entropy of the spectral approximation should decrease with the addition of every moment constraint. We implement the Maximum Entropy algorithm \cite{bandyopadhyay2005maximum} in the same manner as applied in Entropic trace estimation \cite{ete}. We show results for the Themomech UFL SuiteSparse dataset, with $n=80,900$, for which the true log determinant can be calculated. We see that for the MaxEnt algorithm \cite{bandyopadhyay2005maximum} implementation used in\cite{ete} that for $m > 8$ moments, the error (Figure \ref{fig:previousmaxentmomentserror}) and the entropy (Figure\ref{fig:previousmaxentmomentsentropy}) begin to increase. For our algorithm, beyond seeing that the performance is vastly increased (Figure \ref{fig:newsmaxentmomentserror}), the error continually decreases with increasing moment information and the Entropy (Figure \ref{fig:newmaxentmomentsentropy}) decreases smoothly.
@@ -307,20 +309,22 @@ In \cite{Granziol2017} it was proven that the addition of an extra constraint ca
 
 \subsection{Synthetic Kernel Data}
 
+
+
 \begin{figure}
 	\begin{subfigure}%{width=0.2\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{propercond30dim0p1}
+		\includegraphics[width=1\linewidth]{propercond30dim0p1}
 		\caption{Length Scale = 0.1, Condition number = 16}
 		\label{fig:lscale0.1}
 	\end{subfigure}
 	\begin{subfigure}%{.2\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{69500756condl0p33}
+		\includegraphics[width=1\linewidth]{69500756condl0p33}
 		\caption{Length Scale = 0.33, Condition number = $2\times 10^{7}$ Equivalent Chebyshev steps $n=1200$, Lanczos steps $n\approx 100$.}
 		\label{fig:lscale0.33}
 	\end{subfigure}
-	\caption{Comparison of VBALD against Taylor, Lanczos and Chebyshev algorithms for calculating the log determinant of synthetic squared exponential kernel matrices of different condition number. The absolute relative error is on the $y$-axis and number of moments used on the $x$-axis.}
+	\caption{Comparison of MaxEnt against Taylor, Lanczos and Chebyshev algorithms for calculating the log determinant of synthetic squared exponential kernel matrices of different condition number. The absolute relative error is on the $y$-axis and number of moments used on the $x$-axis.}
 \end{figure}
 We simulate the kernel matrices from a Gaussian/Determinental Point Process \cite{Rasmussen2006}, by generating a typical squared exponential kernel matrix $K \in \mathbb{R}^{n \times n}$ using the Python GPy package with $6$ dimensional, Gaussian inputs. We then add noise of variance $10^{-8}$ along the diagonals. We employ a variety of realistic uniform length-scales. We use $m=30$ Moments, $d=50$ Hutchinson probe vectors and compare our novel MaxEnt algorithm against the Taylor approximation, Chebyshev \cite{han2015large} and Lanczos \cite{ubaru2017fast} in Table \ref{table:errortable}. We see that for low condition numbers (Figure \ref{fig:lscale0.1}) The benefit of framing the log determinant as an optimization problem is marginal, whereas for large condition numbers (Figures \ref{fig:lscale0.33}) the benefits are substantial, with orders of magnitude better results than competing methods. We also provide the number of Chebyshev and Lanczos steps required to achieve similar performance. 
 \begin{table}[t]
@@ -408,9 +412,12 @@ where $K \in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Machine Learning Application 2: Learning Cluster Number}
-For most clustering algorithms, including spectral clustering, estimating the number of clusters is a challenging problem \citep{von2007tutorial}, with likelihood, ad-hoc, information theoretic, stability and spectral approaches advocated. For many large scale spectral approaches, the number of clusters is taken as a given input 
+For many clustering algorithms, the number of clusters is taken as a given input 
 %check the second one here, that k really is an input
-\cite{liu2013large},\cite{cucuringu2016simple}. In the latter, one analyses the spectral gap in the eigenvalue spectrum, which we refer to as \emph{eigengap} for short. Applying this approach in the era of big-data (where social networks such as Facebook are approaching $n = 2\times 10^9$ users) means that standard approaches, such as the canonical Cholesky decomposition, with computational complexity $\mathcal{O}(n^{3})$  and storage $\mathcal{O}(n^{2})$ are completely prohibitive. 
+\cite{liu2013large},\cite{cucuringu2016simple}
+%check the second one here, that k really is an input
+The estimation of the cluster number is a challenging problem, \citep{von2007tutorial}, with likelihood, ad-hoc, information theoretic, stability and spectral approaches advocated. In the latter, one analyses the spectral gap in the eigenvalue spectrum, which we refer to as \emph{eigengap} for short. %Applying this approach in the era of big-data (where social networks such as Facebook are approaching $n = 2\times 10^9$ users) means that standard approaches, such as the canonical Cholesky decomposition, with computational complexity $\mathcal{O}(n^{3})$  and storage $\mathcal{O}(n^{2})$ are completely prohibitive. 
+The Lancsoz algorithm, which exploits matrix sparsity by working with matrix vector multiplications,  has computational complexity $\mathcal{O}(n_\mathrm{nz}\times m + nm^{2})\times d$, where for very large sparse matrices, the second term becomes dominant. Given that empirically many social, biological and technical communities are sparse and that all we need for detecting cluster count is an estimation of the eigenvalues and not the eigenvectors, we look for an alternative computationally more effective method of estimating the spectral density. We use the method of maximum entropy, with computational complexity equivalent to Lancsoz without the second term. 
 %\subsection{Related Work} 
 %\label{relatedwork}
 %Krylov subspace methods, using matrix vector products, such as the Lanczos algorithm have been applied to estimating eigengaps and detecting communities with encouraging results \citep{{ubaruapplications},{kang2011spectral}}.
@@ -475,22 +482,15 @@ For most clustering algorithms, including spectral clustering, estimating the nu
 %\]
 %As is the case for all block diagonal matrices, the spectrum of $L$ is given by the union of the spectra $L_{i}$. From the proceeding we know that every Laplacian $L_{i}$ has an eigenvalue $0$ with multipicity $1$, hence $L$ has eigenvalue $0$ with multiplicity $k$ and corresponding eigenvectors of $L$ are those of $L_{i}$ filled with $0$ at the positions of the other blocks.
 
-It is well known \cite{von2007tutorial}, that the multiplicity of the $0$ eigenvalues is equal to the number of disconnected components in the graph. Hence were we to define a community as a completely disconnected component, we could simply count the number of $0$ eigenvalues. However given that real world networks are rarely completely disconnected, this procedure would be of little practical utility. We hence adopt a looser definition of the word cluster and consider groups of nodes containing far greater intra-group connections than inter-group connections. %This conforms to our natural intuition of a group or community.  
-If the graph is connected, but consists of $k$ subgraphs which are ``weakly'' linked to each other, the unnormalized Laplacian has one zero eigenvalue and all the other eigenvalues positive. 
+It is well known \cite{von2007tutorial}, that the multiplicity of the $0$ eigenvalues is equal to the number of disconnected components in the graph. Hence were we to define a community as a completely disconnected component, we could simply count the number of $0$ eigenvalues. However given that real world networks are rarely completely disconnected, this procedure would be of little practical utility. We hence consider groups of nodes containing far greater intra-group connections than inter-group connections as well defined clusters. %This conforms to our natural intuition of a group or community.  
+If the graph is connected, but consists of $k$ subgraphs which are ``weakly'' linked to each other, the graph Laplacian has one zero eigenvalue and all the other eigenvalues positive. 
 This is easily seen by looking at
 \begin{equation}
 \mathbf{u}^{T}L \mathbf{u} = \sum_{i,j=1}^{n}w_{ij}(u_{i}-u_{j})^{2}
 \end{equation}
-which is positive, as $w_{ij}>0$ and given a connected graph $G$ has a single $0$ eigenvalue, all other eigenvalues are thus positive. For small changes in the Laplacian, we expect from matrix perturbation theory \citep{bhatia2013matrix} that the next $k-1$ smallest eigenvalues will be close to $0$. 
-
-
-\section{Estimating the Cluster Number using Maximum Entropy}
-
-From the previous section, we see that the number of clusters is equal to the number of near zero eigenvalues. Assuming there is a clear spectral gap, i.e there exists a $\lambda_{*}$ which upper bounds the largest perturbed eigenvalue and lower bounds the smallest non-zero eigenvalue pre perturbation, we can write the total number of clusters as 
-\begin{equation}
-C = n\int_{0}^{\lambda_{*}} p(\lambda)d\lambda
-\end{equation}
-with $n$ being the number of nodes $L \in \mathbb{R}^{n\times n}$ and $p(\lambda)$ denoting the spectral density. A naive eigen-decomposition, which would give $p(\lambda)$ as a sum of delta functions, has an infeasible $\mathcal{O}(n^{3})$ computational complexity. As previously mentioned in section \ref{relatedwork}, the Lancsoz algorithm, which exploits matrix sparsity by working with matrix vector multiplications,  has computational complexity $\mathcal{O}(n_\mathrm{nz}\times m + nm^{2})\times d$, where for very large sparse matrices, the second term becomes dominant. Given that empirically many social, biological and technical communities are sparse and that all we need for detecting cluster count is an estimation of the eigenvalues and not the eigenvectors, we look for an alternative computationally more effective method of estimating the spectral density. We use the method of maximum entropy, with computational complexity equivalent to Lancsoz without the second term. 
+which is positive, as $w_{ij}>0$ and given a connected graph $G$ has a single $0$ eigenvalue, all other eigenvalues are thus positive. For small changes in the Laplacian, we expect from matrix perturbation theory \citep{bhatia2013matrix} that the next $k-1$ smallest eigenvalues will be close to $0$. Hence, given the spectral decomposition, the number of eigenvalues very close to $0$ corresponds to the number of clusters. 
+\subsubsection{Estimating the Cluster Number using Maximum Entropy:}
+For any smoothed spectral density, which we learn using stochastic trace estimation (Section \ref{stochastictrace}) and MaxEnt (Algorithm \ref{alg:maxent}), to count the number of near $0$ eigenvalues, one simply integrates the spectral density until the first spectral minimum (found using gradient descent) and then multiplies by number of Nodes $N$, we illustrate this in Algorithm \ref{alg:clusteralg}.
 
 
 %\subsection{Analytical forms for the Differential Entropy and Divergence from MaxEnt}
@@ -520,11 +520,13 @@ with $n$ being the number of nodes $L \in \mathbb{R}^{n\times n}$ and $p(\lambda
 %%%%%%%%%%%%%%%%%%%  EXPERIMENTS  %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{EXPERIMENTS}
-\label{experiments}
-We use $d=100$ Gaussian random vectors for our stochastic trace estimation, for both MaxEnt and Lanczos \citep{ubaru2017fast}. 
+\section{Experiments}
+\label{experimentsgraph}
+We follow the experimental setup in Section \ref{experiments}, use $d=100$ Gaussian random vectors for our stochastic trace estimation, for both MaxEnt and Lanczos \citep{ubaru2017fast}. 
 %We explain the procedure of going from Adjacency matrix to Laplacian moments in Algorithm \ref{alg:preprocessing}. 
-When comparing MaxEnt with Lanczos we set the number of moments $m$ equal to the number of Lanczos steps, as they are both matrix vector multiplications in the Krylov subspace. We implement a quadrature MaxEnt algorithm \ref{alg:maxent}. We use a grid size of $10^{-4}$ over the interval $[0,1]$ and add diagonal noise on the Hessian to improve conditioning and symmetrise it. We further use Chebyshev polynomial input instead of power moments for improved performance and conditioning. In order to normalise the moment input we use the normalised Laplacian with eigenvalues bounded by $[0,2]$ and divide by $2$. 
+When comparing MaxEnt with Lanczos we set the number of moments $m$ equal to the number of Lanczos steps%, as they are both matrix vector multiplications in the Krylov subspace. We implement a quadrature MaxEnt algorithm \ref{alg:maxent}.
+%We use a grid size of $10^{-4}$ over the interval $[0,1]$ and add diagonal noise on the Hessian to improve conditioning and symmetrise it. We further use Chebyshev polynomial input instead of power moments for improved performance and conditioning. 
+In order to normalise the moment input we use the normalised Laplacian with eigenvalues bounded by $[0,2]$ and divide by $2$. 
 %We use Python's Scipy implementation of the Newton conjugate gradient algorithm (\cite{scipy}) for the MaxEnt Lagrange multipliers. 
 %We then apply our cluster estimator, Algorithm \ref{alg:clusteralg} to both the spectral density derived from our MaxEnt implementation and to that implied by the Lancsoz algorithm. 
 To make a fair comparison we take the output from Lancsoz \citep{ubaru2017fast} and apply kernel smoothing \citep{lin2016approximating} before applying our cluster estimator. We explain the details of our kernel smoothing in section \ref{smoothinglancsoz}.
@@ -581,11 +583,26 @@ To make a fair comparison we take the output from Lancsoz \citep{ubaru2017fast} 
 	\end{algorithmic}
 \end{algorithm}
 
+\begin{algorithm}[tb]
+	\caption{Stochastic Trace Estimation}
+	\label{alg:stochtrace}
+	
+	\begin{algorithmic}[1]
+		\STATE {\bfseries Input:} Number of Random Vectors $d$, Number of Moments $m$, Matrix $M^{n\times n}$
+		\STATE {\bfseries Output:} Moment Expectations $\mathbb{E}_{\mu}(\lambda^{i})$ $\forall i\leq m$
+	\STATE {Initialize $\mathbb{E}_{\mu}(\lambda^{i}) = 0$ $ \forall i$} 	
+	 \FOR{$i \leq d$} \STATE {Initialize $\vec{z}_{d} = rand(1,n) $} 
+		 \FOR{$j \leq m$} \STATE {$\vec{z}_{d} = M*\vec{z}_{d}$} 
+		 \STATE {$\mathbb{E}_{\mu}(\lambda^{j}) = \mathbb{E}_{\mu}(\lambda^{j}) + \frac{1}{d} \vec{z}_{d}^{t}*\vec{z}_{d}$ }
+		 \ENDFOR
+	 \ENDFOR
+	\end{algorithmic}
+\end{algorithm}
 
 
 
 \subsection{Synthetic Data}
-In order to test the robustness of the approach to networks with clusters of different structures, we implement a mixture of Erd{\"o}s-R{\'e}nyi , Watts-Strogatz and Barabási-Albert networks using the Python package \textit{NetworkX} and conduct multiple experiments using networks that have from $9$ to $240$ clusters, with each cluster containing $30$ nodes. We connect the nodes between clusters randomly, with a single inter-cluster connection. 
+In order to test the robustness of the approach to networks with clusters of different structures, we implement a mixture of Erd{\"o}s-R{\'e}nyi , Watts-Strogatz and Barabási-Albert networks using the Python package \textit{NetworkX} and conduct multiple experiments using networks that have from $9$ to $240$ clusters, with each cluster containing $30$ nodes. We connect the nodes between clusters randomly, with a single inter-cluster connection. We show the results in Table \ref{table:clustererrortable}.
 
 
 
@@ -593,6 +610,7 @@ In order to test the robustness of the approach to networks with clusters of dif
 
 
 \begin{table}[t]
+	\label{table:clustererrortable}
 	\caption{Fractional error in community detection for synthetic networks using MaxEnt and Lanczos with 80 moments}\label{table:fractional_error_syn}
 	\begin{center}
 		\begin{small}
@@ -616,61 +634,60 @@ In order to test the robustness of the approach to networks with clusters of dif
 	\vskip -0.1in
 \end{table}
 
-Figure \ref{fig:synnetwork} shows the community detection errors, expressed in the logarithm to the base 10, for networks of $9$, $30$, $90$, $240$ clusters over number of matrix vector calculations (i.e. number of moments).  We see that for both methods, the detection error generally decreases as more moments are used. For an equivalent number of matrix vector calculations, MaxEnt outperforms the Lanczos algorithm. As there is no accepted prescription by which we can determine when the spectral minimum has been best learned, the occasional dips in error produced by Lanczos (such as for $15$ moments in Figure \ref{fig:sub4} are unlikely to be replicated in real world experiments. 
+%Figure \ref{fig:synnetwork} shows the community detection errors, expressed in the logarithm to the base 10, for networks of $9$, $30$, $90$, $240$ clusters over number of matrix vector calculations (i.e. number of moments).  We see that for both methods, the detection error generally decreases as more moments are used. For an equivalent number of matrix vector calculations, MaxEnt outperforms the Lanczos algorithm. As there is no accepted prescription by which we can determine when the spectral minimum has been best learned, the occasional dips in error produced by Lanczos (such as for $15$ moments in Figure \ref{fig:sub4} are unlikely to be replicated in real world experiments. 
 
-Table \ref{table:fractional_error_syn} displays the fractional errors in community detection when we apply Lanczos and MaxEnt, both using 80 moments, to synthetic networks of different sizes and cluster numbers. In each case, lower detection error is highlighted in bold. It is evident that MaxEnt outperforms Lanczos as the number of clusters and the network size increase. 
-We observe a general improvement in performance for larger graphs, visible in the differences between fractional errors for MaxEnt and not Lanczos. This is to be expected as the true spectral density
-\begin{equation}
-p(\lambda) = \frac{1}{n}\sum_{i}^{n}\delta(\lambda-\lambda_{i})
-\end{equation}
-becomes continuous in the $n\rightarrow\infty$ limit and hence we expect the density to be better approximated by a continuous distribution for larger $n$ \citep{ete}. %There are also arguments from the information theoretic literature which state that for macroscopic systems (large $n$), the distribution of maximum entropy dominates the space of solutions for the given constraints \citep{fluctuationpriors}. Essentially this means that for larger and larger systems, assuming that we have incorporated the correct constraints, which for spectral density estimation stochastic trace constraints do (\cite{DBLP:conf/bigdataconf/GranziolR17}) the true distribution looks more and more like that of maximum entropy. Furthermore other distributions, i.e a particular realization of Gauss-Lancsoz quaderature (\cite{ubaru2017fast}) becomes increasingly unlikely. 
-\\\\
+%Table \ref{table:fractional_error_syn} displays the fractional errors in community detection when we apply Lanczos and MaxEnt, both using 80 moments, to synthetic networks of different sizes and cluster numbers. In each case, lower detection error is highlighted in bold. It is evident that MaxEnt outperforms Lanczos as the number of clusters and the network size increase. 
+%We observe a general improvement in performance for larger graphs, visible in the differences between fractional errors for MaxEnt and not Lanczos. This is to be expected as the true spectral density
+%\begin{equation}
+%p(\lambda) = \frac{1}{n}\sum_{i}^{n}\delta(\lambda-\lambda_{i})
+%\end{equation}
+%becomes continuous in the $n\rightarrow\infty$ limit and hence we expect the density to be better approximated by a continuous distribution for larger $n$ \citep{ete}. %There are also arguments from the information theoretic literature which state that for macroscopic systems (large $n$), the distribution of maximum entropy dominates the space of solutions for the given constraints \citep{fluctuationpriors}. Essentially this means that for larger and larger systems, assuming that we have incorporated the correct constraints, which for spectral density estimation stochastic trace constraints do (\cite{DBLP:conf/bigdataconf/GranziolR17}) the true distribution looks more and more like that of maximum entropy. Furthermore other distributions, i.e a particular realization of Gauss-Lancsoz quaderature (\cite{ubaru2017fast}) becomes increasingly unlikely. 
+%\\\\
 To test the performance of our approach for networks that are too big to apply eigen-decomposition, we also generate two large networks by mixing Erd{\"o}s-R{\'e}nyi, Watts-Strogatz and Barabási-Albert networks. The first large network has a size of  201,600 nodes and comprises 350 interconnected clusters whose size varies from 500 to 1000 nodes. The other large network has a size of 404,420 nodes and comprises interconnected 1355 clusters whose size varies from 200 to 800 nodes. The results in Figure \ref{fig:largeSyntheNet} show that our MaxEnt approach outperforms Lanczos for both large synthetic networks.
-%
-%\begin{figure}
-%	\centering
-%	\begin{subfigure}
-%		\centering
-%		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_n=201600_c=305.eps}
-%		\caption{305 clusters}
-%		\label{subfig:emailerror1}	
-%	\end{subfigure}%
-%	\begin{subfigure}
-%		\centering
-%		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_c_1355_n_404420.eps}
-%		\caption{1,355 clusters}
-%		\label{subfig:emailerror2}	
-%	\end{subfigure}%
-%	\caption{Log error of community detection using MaxEnt and Lanczos on large synthetic networks: a) synthetic network of  201,600 nodes and 305 clusters and b) synthetic network of 404,420 nodes and 1,355 clusters.}
-%	\label{fig:largeSyntheNet}	
-%\end{figure} 
 
-\subsection{Real Data}
-
-\subsubsection{Small Real World Data}
 \begin{figure}
 	\centering
 	\begin{subfigure}
 		\centering
-		\includegraphics[trim=0cm 0cm 0.1cm 0.8cm, clip, width=1.0\linewidth]{Figures/Stem_Density_Email.eps}
-		\caption{Stem Graph and Eigen-Spectrum}
+		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_n=201600_c=305.eps}
+		\caption{305 clusters}
 		\label{subfig:emailerror1}	
 	\end{subfigure}%
-	
 	\begin{subfigure}
 		\centering
-		\includegraphics[trim=0cm 0cm 0.1cm 0.8cm, clip, width=1.0\linewidth]{Figures/Stem_Density_Email2.eps}
-		\caption{Zoomed-in Graphs}
+		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_c_1355_n_404420.eps}
+		\caption{1,355 clusters}
 		\label{subfig:emailerror2}	
 	\end{subfigure}%
-	\caption{Stem graph of the eigen-spectrum of the Email Dataset. The subplot $(a)$ shows all the eigenvalues and the whole eigenvalue spectrum. The subplot $(b)$ is a zoomed-in version of $(a)$, which displays the smallest 100 eigenvalues with a clear spectral gap at 20 and the corresponding spectral density near the origin. The area under the spectral density up to 0.005 multiplied by the number of nodes $n$ predicts the number of clusters.}
-	\label{fig:email}	
+	\caption{Log error of community detection using MaxEnt and Lanczos on large synthetic networks: a) synthetic network of  201,600 nodes and 305 clusters and b) synthetic network of 404,420 nodes and 1,355 clusters.}
+	\label{fig:largeSyntheNet}	
 \end{figure} 
+
+%\subsection{Real Data}
+
+\subsubsection{Small Real World Data}
+%\begin{figure}
+%	\centering
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[trim=0cm 0cm 0.1cm 0.8cm, clip, width=1.0\linewidth]{Figures/Stem_Density_Email.eps}
+%		\caption{Stem Graph and Eigen-Spectrum}
+%		\label{subfig:emailerror1}	
+%	\end{subfigure}%
+%	
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[trim=0cm 0cm 0.1cm 0.8cm, clip, width=1.0\linewidth]{Figures/Stem_Density_Email2.eps}
+%		\caption{Zoomed-in Graphs}
+%		\label{subfig:emailerror2}	
+%	\end{subfigure}%
+%	\caption{Stem graph of the eigen-spectrum of the Email Dataset. The subplot $(a)$ shows all the eigenvalues and the whole eigenvalue spectrum. The subplot $(b)$ is a zoomed-in version of $(a)$, which displays the smallest 100 eigenvalues with a clear spectral gap at 20 and the corresponding spectral density near the origin. The area under the spectral density up to 0.005 multiplied by the number of nodes $n$ predicts the number of clusters.}
+%	\label{fig:email}	
+%\end{figure} 
 
 When the number of nodes $n \approx 10^{3}$, it is possible to compute the eigen-decomposition exactly and hence to benchmark the performance of our algorithm in the real world. 
 
-The first real-world dataset we use is the Email network, which is generated using email communication data among $1,005$ members of a large European research institution and is an undirected graph of $n=1,005$ nodes. We calculate the ground-truth by computing the eigenvalues explicitly and finding the spectral gap near $0$. As shown in Figure \ref{fig:email}, we count $20$ very small eigenvalues before a large jump in magnitude and set this as the ground truth for the number of clusters in the network. This corresponds to a drop in spectral eigendensity as displayed in the lower subplot of Figure \ref{fig:email}. 
-
+The first real-world dataset we use is the Email network, which is generated using email communication data among $1,005$ members of a large European research institution and is an undirected graph of $n=1,005$ nodes. We calculate the ground-truth by computing the eigenvalues explicitly and finding the spectral gap near $0$. %As shown in Figure \ref{fig:email}, we count $20$ very small eigenvalues before a large jump in magnitude and set this as the ground truth for the number of clusters in the network. This corresponds to a drop in spectral eigendensity as displayed in the lower subplot of Figure \ref{fig:email}. 
 We note that this differs from the value of $42$ given by the number of departments at the research institute. A likely reason for this ground truth inflation is that certain departments, Astrophysics, Theoretical Physics and Mathematics for example, may collaborate to such an extent that their division in name may not be reflected in terms of node connection structure.
 
 
@@ -694,13 +711,9 @@ We note that this differs from the value of $42$ given by the number of departme
 \end{figure}
 
 \label{smoothinglancsoz}
-We display the process of spectral learning for both MaxEnt and Lanczos, by plotting the spectral density of both methods against the true eigenvalue spectral density in Figure \ref{fig:emaildensity}. In order to make a valid comparison, we smooth the implied density using a Gaussian kernel, with $\sigma = 10^{-3}$. We note that both MaxEnt and Lanczos approximate the ground truth better with a greater number of moments/steps $m$ and that Lanczos learns the extrema before the bulk of the distribution.
-
-
+%We display the process of spectral learning for both MaxEnt and Lanczos, by plotting the spectral density of both methods against the true eigenvalue spectral density in Figure \ref{fig:emaildensity}. 
+In order to make a valid comparison, we smooth the implied density using a Gaussian kernel, with $\sigma = 10^{-3}$. %We note that both MaxEnt and Lanczos approximate the ground truth better with a greater number of moments/steps $m$ and that Lanczos learns the extrema before the bulk of the distribution.
 We plot the log error against the number of moments for both MaxEnt and Lanczos in Figure \ref{fig:emailerror}, with MaxEnt showing superior performance.
-
-
-
 We repeat the experiment on the Net Science collaboration network, which represents a co-authorship network of $1,589$ scientists ($n = 1,589$) working on network theory and experiment \citep{newman2006finding}. The results in Figure \ref{fig:netscience} show that MaxEnt quickly outperforms the Lanczos algorithm after around $20$ moments.
 
 % Acknowledgements should only appear in the accepted version.
