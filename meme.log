@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.29)  4 SEP 2018 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.12.29)  4 SEP 2018 20:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -90,18 +90,46 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip48
 \subfig@bottom=\skip49
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen107
+\captionmargin@=\dimen108
+\captionwidth=\dimen109
+\caption@tempdima=\dimen110
+\caption@indent=\dimen111
+\caption@parindent=\dimen112
+\caption@hangindent=\dimen113
+)
+\c@ContinuedFloat=\count92
+Package caption Info: subfigure package is loaded.
+)
+\c@KVtest=\count93
+\sf@farskip=\skip50
+\sf@captopadj=\dimen114
+\sf@capskip=\skip51
+\sf@nearskip=\skip52
+\sf@top=\skip53
+\sf@bottom=\skip54
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip50
-\bibsep=\skip51
+\bibhang=\skip55
+\bibsep=\skip56
 LaTeX Info: Redefining \cite on input line 694.
 LaTeX Info: Redefining \citeauthor on input line 712.
 LaTeX Info: Redefining \citeyear on input line 735.
-\c@NAT@ctr=\count92
+\c@NAT@ctr=\count94
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/03/10 v2.15b AMS math features
-\@mathmargin=\skip52
+\@mathmargin=\skip57
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -110,49 +138,49 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
-\ex@=\dimen107
+\ex@=\dimen115
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen108
+\pmbraise@=\dimen116
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count93
+\inf@bad=\count95
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count94
-\leftroot@=\count95
+\uproot@=\count96
+\leftroot@=\count97
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count96
-\DOTSCASE@=\count97
+\classnum@=\count98
+\DOTSCASE@=\count99
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen109
+\big@size=\dimen117
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count98
-\c@MaxMatrixCols=\count99
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
 \dotsspace@=\muskip11
-\c@parentequation=\count100
-\dspbrk@lvl=\count101
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
 \tag@help=\toks16
-\row@=\count102
-\column@=\count103
-\maxfields@=\count104
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
 \andhelp@=\toks17
-\eqnshift@=\dimen110
-\alignsep@=\dimen111
-\tagshift@=\dimen112
-\tagwidth@=\dimen113
-\totwidth@=\dimen114
-\lineht@=\dimen115
+\eqnshift@=\dimen118
+\alignsep@=\dimen119
+\tagshift@=\dimen120
+\tagwidth@=\dimen121
+\totwidth@=\dimen122
+\lineht@=\dimen123
 \@envbody=\toks18
-\multlinegap=\skip53
-\multlinetaggap=\skip54
+\multlinegap=\skip58
+\multlinetaggap=\skip59
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
@@ -169,23 +197,23 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen116
-\lightrulewidth=\dimen117
-\cmidrulewidth=\dimen118
-\belowrulesep=\dimen119
-\belowbottomsep=\dimen120
-\aboverulesep=\dimen121
-\abovetopsep=\dimen122
-\cmidrulesep=\dimen123
-\cmidrulekern=\dimen124
-\defaultaddspace=\dimen125
-\@cmidla=\count105
-\@cmidlb=\count106
-\@aboverulesep=\dimen126
-\@belowrulesep=\dimen127
-\@thisruleclass=\count107
-\@lastruleclass=\count108
-\@thisrulewidth=\dimen128
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count107
+\@cmidlb=\count108
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count109
+\@lastruleclass=\count110
+\@thisrulewidth=\dimen136
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -193,7 +221,7 @@ nment
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count109
+\c@float@type=\count111
 \float@exts=\toks20
 \float@box=\box28
 \@float@everytoks=\toks21
@@ -203,16 +231,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks22
-\c@algorithm=\count110
+\c@algorithm=\count112
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count111
-\c@ALC@line=\count112
-\c@ALC@rem=\count113
-\c@ALC@depth=\count114
-\ALC@tlm=\skip55
-\algorithmicindent=\skip56
+\c@ALC@unique=\count113
+\c@ALC@line=\count114
+\c@ALC@rem=\count115
+\c@ALC@depth=\count116
+\ALC@tlm=\skip60
+\algorithmicindent=\skip61
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
@@ -225,34 +253,34 @@ Package color Info: Driver file: pdftex.def on input line 144.
 (./meme.aux)
 \openout1 = `meme.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 33.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen129
+\scratchcounter=\count117
+\scratchdimen=\dimen137
 \scratchbox=\box30
-\nofMPsegments=\count116
-\nofMParguments=\count117
+\nofMPsegments=\count118
+\nofMParguments=\count119
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen130
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen138
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
 \everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
@@ -303,37 +331,41 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
-LaTeX Font Info:    Try loading font information for U+msa on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 41.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
  [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-Overfull \hbox (0.96751pt too wide) detected at line 127
+Overfull \hbox (0.96751pt too wide) detected at line 129
 \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 q\OT1/c
 mr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 q\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 x\OT1/cmr/m/n/10 ) [] \OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (\OML/cmm/m/
@@ -343,10 +375,40 @@ m/it/10 [][][][] q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm
  []
 
 [2]
-Underfull \hbox (badness 1490) in paragraph at lines 262--262
+Underfull \hbox (badness 1490) in paragraph at lines 264--264
 []\OT1/ptm/b/n/10 Algorithm 1 \OT1/ptm/m/n/10 Com-put-ing Log De-ter-mi-nant us
 -ing Con-
  []
+
+
+LaTeX Warning: Reference `fig:previousmaxentmomentserror' on page 3 undefined o
+n input line 282.
+
+
+LaTeX Warning: Reference `fig:previousmaxentmomentsentropy' on page 3 undefined
+ on input line 282.
+
+
+LaTeX Warning: Reference `fig:newsmaxentmomentserror' on page 3 undefined on in
+put line 282.
+
+
+LaTeX Warning: Reference `fig:newmaxentmomentsentropy' on page 3 undefined on i
+nput line 282.
+
+
+! LaTeX Error: No counter 'subfigure@save' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.316 	\subfloat
+                [Old Entropy vs Moments]{\label{figur:1}\includegraphics[wid...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
 <momentsentropy_smpl_30_dataset_thermomech_TCcrop.pdf, id=21, 566.6309pt x 432.
@@ -355,8 +417,23 @@ File: momentsentropy_smpl_30_dataset_thermomech_TCcrop.pdf Graphic file (type p
 df)
  <use momentsentropy_smpl_30_dataset_thermomech_TCcrop.pdf>
 Package pdftex.def Info: momentsentropy_smpl_30_dataset_thermomech_TCcrop.pdf u
-sed on input line 285.
-(pdftex.def)             Requested size: 191.51622pt x 146.21858pt.
+sed on input line 316.
+(pdftex.def)             Requested size: 113.81102pt x 86.89279pt.
+
+
+! LaTeX Error: No counter 'subfigure@save' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317 	\subfloat
+                [Old Entropy vs Error]{\label{figur:2}\includegraphics[width...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 <momentserror_smpl_30_dataset_thermomech_TCcrop.pdf, id=22, 561.35521pt x 437.8
 9899pt>
@@ -364,33 +441,76 @@ File: momentserror_smpl_30_dataset_thermomech_TCcrop.pdf Graphic file (type pdf
 )
  <use momentserror_smpl_30_dataset_thermomech_TCcrop.pdf>
 Package pdftex.def Info: momentserror_smpl_30_dataset_thermomech_TCcrop.pdf use
-d on input line 291.
-(pdftex.def)             Requested size: 191.51622pt x 149.39818pt.
+d on input line 317.
+(pdftex.def)             Requested size: 113.81102pt x 88.78096pt.
+
+
+! LaTeX Error: No counter 'subfigure@save' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.319 	\subfloat
+                [New Entropy vs Moments]{\label{figur:3}\includegraphics[wid...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 <entropyvsmomentsthermonewcrop.pdf, id=23, 377.31967pt x 241.44102pt>
 File: entropyvsmomentsthermonewcrop.pdf Graphic file (type pdf)
 
 <use entropyvsmomentsthermonewcrop.pdf>
-Package pdftex.def Info: entropyvsmomentsthermonewcrop.pdf used on input line 2
-97.
-(pdftex.def)             Requested size: 215.45348pt x 137.86595pt.
+Package pdftex.def Info: entropyvsmomentsthermonewcrop.pdf used on input line 3
+19.
+(pdftex.def)             Requested size: 113.81102pt x 72.82706pt.
+
+
+! LaTeX Error: No counter 'subfigure@save' defined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.320 	\subfloat
+                [New Entropy vs Error]{\label{figur:4}\includegraphics[width...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 <errorvsmomentsthermonewcrop.pdf, id=24, 377.86069pt x 241.44102pt>
 File: errorvsmomentsthermonewcrop.pdf Graphic file (type pdf)
 
 <use errorvsmomentsthermonewcrop.pdf>
-Package pdftex.def Info: errorvsmomentsthermonewcrop.pdf used on input line 303
+Package pdftex.def Info: errorvsmomentsthermonewcrop.pdf used on input line 320
 .
-(pdftex.def)             Requested size: 215.45348pt x 137.667pt.
+(pdftex.def)             Requested size: 113.81102pt x 72.72021pt.
 
 
-LaTeX Warning: Float too large for page by 71.50893pt on input line 308.
+Package caption Warning: \label without proper reference on input line 328.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `table:errortable' on page 3 undefined on input line 3
+26.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 325.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 339.
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--374
+Underfull \hbox (badness 10000) in paragraph at lines 326--388
 \OT1/ptm/m/n/10 We sim-u-late the ker-nel ma-tri-ces from a Gaus-
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 326--388
+\OT1/ptm/m/n/10 al-go-rithm against the Tay-lor ap-prox-i-ma-tion, Cheby-shev
+ []
+
+
+Underfull \hbox (badness 1292) in paragraph at lines 326--388
+\OT1/ptm/m/n/10 Han, Malioutov, and Shin (2015) and Lanc-zos Ubaru,
  []
 
 [3] [4 <./momentsentropy_smpl_30_dataset_thermomech_TCcrop.pdf> <./momentserror
@@ -402,6 +522,15 @@ p.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
+
+
+Package caption Warning: \label without proper reference on input line 610.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `table:clustererrortable' on page 5 undefined on input
+ line 602.
+
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
 Package epstopdf Info: Source file: <Figures/SynNet_n=201600_c=305.eps>
@@ -413,16 +542,16 @@ d-to.pdf>
 (epstopdf)                    size: 7503 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/SynNet_n=201600_c=
 305-eps-converted-to.pdf Figures/SynNet_n=201600_c=305.eps>
-(epstopdf)             \includegraphics on input line 635.
+(epstopdf)             \includegraphics on input line 649.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/SynNet_n=201600_c=305-eps-converted-to.pdf, id=142, 283.0575pt x 266.9
+<Figures/SynNet_n=201600_c=305-eps-converted-to.pdf, id=143, 283.0575pt x 266.9
 975pt>
 File: Figures/SynNet_n=201600_c=305-eps-converted-to.pdf Graphic file (type pdf
 )
  <use Figures/SynNet_n=201600_c=305-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/SynNet_n=201600_c=305-eps-converted-to.pdf use
-d on input line 635.
+d on input line 649.
 (pdftex.def)             Requested size: 239.39438pt x 228.11003pt.
 Package epstopdf Info: Source file: <Figures/SynNet_c_1355_n_404420.eps>
 (epstopdf)                    date: 2018-04-16 11:16:25
@@ -433,21 +562,17 @@ ed-to.pdf>
 (epstopdf)                    size: 7504 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/SynNet_c_1355_n_40
 4420-eps-converted-to.pdf Figures/SynNet_c_1355_n_404420.eps>
-(epstopdf)             \includegraphics on input line 641.
+(epstopdf)             \includegraphics on input line 655.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/SynNet_c_1355_n_404420-eps-converted-to.pdf, id=144, 284.06125pt x 265
+<Figures/SynNet_c_1355_n_404420-eps-converted-to.pdf, id=145, 284.06125pt x 265
 .99374pt>
 File: Figures/SynNet_c_1355_n_404420-eps-converted-to.pdf Graphic file (type pd
 f)
  <use Figures/SynNet_c_1355_n_404420-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/SynNet_c_1355_n_404420-eps-converted-to.pdf us
-ed on input line 641.
+ed on input line 655.
 (pdftex.def)             Requested size: 239.39438pt x 226.4448pt.
-
-Underfull \vbox (badness 1867) has occurred while \output is active []
-
- [5]
 Package epstopdf Info: Source file: <Figures/Error_for_EmailL.eps>
 (epstopdf)                    date: 2018-04-09 21:36:19
 (epstopdf)                    size: 17072 bytes
@@ -457,15 +582,15 @@ pdf>
 (epstopdf)                    size: 7733 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/Error_for_EmailL-e
 ps-converted-to.pdf Figures/Error_for_EmailL.eps>
-(epstopdf)             \includegraphics on input line 681.
+(epstopdf)             \includegraphics on input line 695.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Error_for_EmailL-eps-converted-to.pdf, id=150, 435.6275pt x 295.1025pt
+<Figures/Error_for_EmailL-eps-converted-to.pdf, id=147, 435.6275pt x 295.1025pt
 >
 File: Figures/Error_for_EmailL-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Error_for_EmailL-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Error_for_EmailL-eps-converted-to.pdf used on 
-input line 681.
+input line 695.
 (pdftex.def)             Requested size: 239.39438pt x 167.15906pt.
 Package epstopdf Info: Source file: <Figures/Error_for_NetscienceL.eps>
 (epstopdf)                    date: 2018-04-09 21:36:19
@@ -476,53 +601,51 @@ d-to.pdf>
 (epstopdf)                    size: 7689 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figures/Error_for_Netscien
 ceL-eps-converted-to.pdf Figures/Error_for_NetscienceL.eps>
-(epstopdf)             \includegraphics on input line 688.
+(epstopdf)             \includegraphics on input line 702.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Error_for_NetscienceL-eps-converted-to.pdf, id=152, 434.62375pt x 294.
+<Figures/Error_for_NetscienceL-eps-converted-to.pdf, id=149, 434.62375pt x 294.
 09875pt>
 File: Figures/Error_for_NetscienceL-eps-converted-to.pdf Graphic file (type pdf
 )
  <use Figures/Error_for_NetscienceL-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/Error_for_NetscienceL-eps-converted-to.pdf use
-d on input line 688.
+d on input line 702.
 (pdftex.def)             Requested size: 239.39438pt x 166.98492pt.
-
-Underfull \vbox (badness 1874) has occurred while \output is active []
-
- [6 <./Figures/SynNet_n=201600_c=305-eps-converted-to.pdf> <./Figures/SynNet_c_
-1355_n_404420-eps-converted-to.pdf>]
-Underfull \hbox (badness 1163) in paragraph at lines 728--729
+ [5] [6 <./Figures/SynNet_n=201600_c=305-eps-converted-to.pdf> <./Figures/SynNe
+t_c_1355_n_404420-eps-converted-to.pdf> <./Figures/Error_for_EmailL-eps-convert
+ed-to.pdf> <./Figures/Error_for_NetscienceL-eps-converted-to.pdf>]
+Underfull \hbox (badness 1163) in paragraph at lines 742--743
 []\OT1/ptm/m/n/10 If we con-sider the nat-u-ral vari-ant of the Lapla-cian,
  []
 
 
-LaTeX Warning: Reference `lnorm' on page 7 undefined on input line 737.
+LaTeX Warning: Reference `lnorm' on page 7 undefined on input line 751.
 
-[7 <./Figures/Error_for_EmailL-eps-converted-to.pdf> <./Figures/Error_for_Netsc
-ienceL-eps-converted-to.pdf>] [8]
-Underfull \hbox (badness 4467) in paragraph at lines 852--853
+[7]
+Underfull \hbox (badness 4467) in paragraph at lines 866--867
 \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\O
 T1/cmr/m/n/10 ) [] \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cm
 r/m/n/10 )\OML/cmm/m/it/10 dx$ \OT1/ptm/m/n/10 un-der cer-tain mo-ment con-stra
 ints
  []
 
+[8]
 
 LaTeX Warning: Reference `dataprocessesing' on page 9 undefined on input line 8
-65.
+79.
 
 
-LaTeX Warning: Reference `sumentropies' on page 9 undefined on input line 865.
+LaTeX Warning: Reference `sumentropies' on page 9 undefined on input line 879.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--888
+Underfull \hbox (badness 10000) in paragraph at lines 900--902
 \OT1/ptm/m/n/10 Where $\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT
 1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is the true eigen-value dis-tri-bu-tion.
  []
 
 
-Overfull \hbox (13.11958pt too wide) detected at line 890
+Overfull \hbox (13.11958pt too wide) detected at line 904
 [][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT
 1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 q\OT1/cmr/m/n/10 (\OML/cmm
 /m/it/10 x\OT1/cmr/m/n/10 )) [](\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/i
@@ -536,34 +659,37 @@ n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 jj []\OT1/cmr/m/n/10
 File: propercond30dim0p1.png Graphic file (type png)
 
 <use propercond30dim0p1.png>
-Package pdftex.def Info: propercond30dim0p1.png used on input line 903.
+Package pdftex.def Info: propercond30dim0p1.png used on input line 917.
 (pdftex.def)             Requested size: 239.39438pt x 180.71103pt.
 
 <69500756condl0p33.png, id=193, 562.1pt x 421.575pt>
 File: 69500756condl0p33.png Graphic file (type png)
 
 <use 69500756condl0p33.png>
-Package pdftex.def Info: 69500756condl0p33.png used on input line 909.
+Package pdftex.def Info: 69500756condl0p33.png used on input line 923.
 (pdftex.def)             Requested size: 239.39438pt x 179.5433pt.
- (./meme.bbl [9] [10 <./propercond30dim0p1.png (PNG copy)> <./69500756condl0p33
-.png (PNG copy)>]
+ (./meme.bbl [9]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
-) [11] (./meme.aux)
+ [10 <./propercond30dim0p1.png (PNG copy)> <./69500756condl0p33.png (PNG copy)>
+]) [11] (./meme.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3717 strings out of 493014
- 52273 string characters out of 6133350
- 125496 words of memory out of 5000000
- 7147 multiletter control sequences out of 15000+600000
+ 4869 strings out of 493014
+ 73155 string characters out of 6133350
+ 149534 words of memory out of 5000000
+ 8290 multiletter control sequences out of 15000+600000
  30932 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,12n,26p,1146b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,12n,49p,1146b,559s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texl
@@ -589,7 +715,7 @@ type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fo
 nts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on meme.pdf (11 pages, 444529 bytes).
+Output written on meme.pdf (11 pages, 444548 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams

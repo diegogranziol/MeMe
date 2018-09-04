@@ -8,6 +8,8 @@
 \usepackage{url}  %Required
 \usepackage{graphicx}  %Required
 \usepackage{subfigure}
+\usepackage{subfig}
+%\usepackage{subcaption}
 \usepackage{natbib}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -279,32 +281,44 @@ For simplicity we have kept all the formulas in terms of power moments, however 
 \subsection{Comparison to Previous MaxEnt algorithm}
 In \cite{Granziol2017} it was proven that the addition of an extra constraint cannot increase the entropy of the MaxEnt solution. For the problem of log determinants, this signifies that the entropy of the spectral approximation should decrease with the addition of every moment constraint. We implement the Maximum Entropy algorithm \cite{bandyopadhyay2005maximum} in the same manner as applied for log determinant estimation in \cite{ete}. We show results for the Themomech UFL SuiteSparse dataset, with $n=80,900$, for which the true log determinant can be calculated. We see that for the MaxEnt algorithm \cite{bandyopadhyay2005maximum} implementation used in\cite{ete} that for $m > 8$ moments, the error (Figure \ref{fig:previousmaxentmomentserror}) and the entropy (Figure\ref{fig:previousmaxentmomentsentropy}) begin to increase. For our algorithm, beyond seeing that the performance is vastly increased (Figure \ref{fig:newsmaxentmomentserror}), the error continually decreases with increasing moment information and the Entropy (Figure \ref{fig:newmaxentmomentsentropy}) decreases smoothly.
 
-\begin{figure}
-	\begin{subfigure}%{width=0.2\textwidth}
-		\centering
-		\includegraphics[width=.8\linewidth]{momentsentropy_smpl_30_dataset_thermomech_TCcrop}
-		\caption{Previous MaxEnt Algorithm, Entropy against Moments}
-		\label{fig:previousmaxentmomentsentropy}
-	\end{subfigure}
-	\begin{subfigure}%{.2\textwidth}
-		\centering
-		\includegraphics[width=.8\linewidth]{momentserror_smpl_30_dataset_thermomech_TCcrop}
-		\caption{Previous MaxEnt Algorithm, Errors against Moments}
-		\label{fig:previousmaxentmomentserror}
-	\end{subfigure}
-	\begin{subfigure}%{.2\textwidth}
-		\centering
-		\includegraphics[width=0.9\linewidth]{entropyvsmomentsthermonewcrop}
-		\caption{New MaxEnt Algorithm, Entropy against Moments}
-		\label{fig:newmaxentmomentsentropy}
-	\end{subfigure}
-	\begin{subfigure}%{.2\textwidth}
-		\centering
-		\includegraphics[width=0.9\linewidth]{errorvsmomentsthermonewcrop}
-		\caption{New MaxEnt Algorithm, Error against Moments}
-		\label{fig:newsmaxentmomentserror}
-	\end{subfigure}
-	\caption{New Maximum Entropy Algorithm}
+%\begin{figure}
+%	\begin{subfigure}%{width=0.2\textwidth}
+%		\centering
+%		\includegraphics[width=.8\linewidth]{momentsentropy_smpl_30_dataset_thermomech_TCcrop}
+%		\caption{Previous MaxEnt Algorithm, Entropy against Moments}
+%		\label{fig:previousmaxentmomentsentropy}
+%	\end{subfigure}
+%	\begin{subfigure}%{.2\textwidth}
+%		\centering
+%		\includegraphics[width=.8\linewidth]{momentserror_smpl_30_dataset_thermomech_TCcrop}
+%		\caption{Previous MaxEnt Algorithm, Errors against Moments}
+%		\label{fig:previousmaxentmomentserror}
+%	\end{subfigure}
+%	\begin{subfigure}%{.2\textwidth}
+%		\centering
+%		\includegraphics[width=0.9\linewidth]{entropyvsmomentsthermonewcrop}
+%		\caption{New MaxEnt Algorithm, Entropy against Moments}
+%		\label{fig:newmaxentmomentsentropy}
+%	\end{subfigure}
+%	\begin{subfigure}%{.2\textwidth}
+%		\centering
+%		\includegraphics[width=0.9\linewidth]{errorvsmomentsthermonewcrop}
+%		\caption{New MaxEnt Algorithm, Error against Moments}
+%		\label{fig:newsmaxentmomentserror}
+%	\end{subfigure}
+%	\caption{New Maximum Entropy Algorithm}
+%\end{figure}
+
+\begin{figure}[htp]
+	\centering
+	\label{figur}\caption{Comparison of Classical and Novel MaxEnt algorithms}
+	
+	\subfloat[Old Entropy vs Moments]{\label{figur:1}\includegraphics[width=40mm]{momentsentropy_smpl_30_dataset_thermomech_TCcrop}}
+	\subfloat[Old Entropy vs Error]{\label{figur:2}\includegraphics[width=40mm]{momentserror_smpl_30_dataset_thermomech_TCcrop}}
+	\\
+	\subfloat[New Entropy vs Moments]{\label{figur:3}\includegraphics[width=40mm]{entropyvsmomentsthermonewcrop}}
+	\subfloat[New Entropy vs Error]{\label{figur:4}\includegraphics[width=40mm]{errorvsmomentsthermonewcrop}}
+	
 \end{figure}
 
 \subsection{Synthetic Kernel Data}
