@@ -45,18 +45,18 @@ We develop a novel robust Maximum Entropy algorithm, capable of dealing with hun
 \section{Introduction}
 
 Algorithmic scalability is a keystone in the realm of modern machine learning. Making high quality inference, on large, feature rich datasets under a constrained computational budget is arguably the primary goal of the learning community. 
-We develop a novel, robust Maximum Entropy algorithm using Newton conjugate gradient and Hessian information with a Legendre/Chebyshev basis, as opposed to power moments. Our algorithm is stable for a large number of moments, surpassing the $m \approx 8$ limit of previous MaxEnt algorithms \cite{DBLP:conf/bigdataconf/GranziolR17,bandyopadhyay2005maximum,mead1984maximum}. We show that the ability to handle more moment information, which can be calculated cheaply either analytically or with the use of stochastic trace estimation, leads to significantly enhanced performance. We showcase the utility of the algorithm by applying it to improve the scalability of Determinantal Point Processes, Learning the number of clusters in large graphs and Bayesian Optimisation. We further derive bounds on the error of the estimated underlying densities and establish a link between Maximum Entropy methods and constrained variational inference. 
+We develop a novel, robust Maximum Entropy algorithm using Newton conjugate gradient and Hessian information with a Legendre/Chebyshev basis, as opposed to power moments. Our algorithm is stable for a large number of moments, surpassing the $m \approx 8$ limit of previous MaxEnt algorithms \cite{DBLP:conf/bigdataconf/GranziolR17,bandyopadhyay2005maximum,mead1984maximum}. We show that the ability to handle more moment information, which can be calculated cheaply either analytically or with the use of stochastic trace estimation, explained in section \ref{stochastictrace} leads to significantly enhanced performance. We showcase the utility of the algorithm by applying it to improve the scalability of Determinantal Point Processes, Learning the number of clusters in large graphs and active approximations in Bayesian Optimisation. We further derive bounds on the error of the estimated underlying densities and establish a link between Maximum Entropy methods and constrained variational inference.
 
 
 \subsection{The Method of Maximum Entropy}
 
 \label{maxent}
-The method of maximum entropy, hereafter referred to as \emph{MaxEnt} \citep{Presse2013} is a procedure for generating the most conservative estimate\footnote{With respect to the uniform distribution.} of a probability distribution possible with the given information, the most non-committal with regard to missing information \citep{Jaynes1957}. Intuitively, on a bounded domain, the most conservative distribution, the distribution of maximum entropy, is the one that assigns equal probability to all the accessible states. Hence, the method of maximum entropy can be thought of choosing the flattest, or most equiprobable distribution, satisfying the given constraints. To determine the spectral density $p(\lambda)$ using MaxEnt, we maximise the entropic functional 
+The method of maximum entropy, hereafter referred to as \emph{MaxEnt} \citep{Presse2013} is a procedure for generating the most conservative estimate\footnote{With respect to the uniform distribution.} of a probability distribution possible with the given information, the most non-committal with regard to missing information \citep{Jaynes1957}. Intuitively, on a bounded domain, the most conservative distribution, the distribution of maximum entropy, is the one that assigns equal probability to all the accessible states. Hence, the method of maximum entropy can be thought of choosing the flattest, or most equiprobable distribution, satisfying the given constraints. To determine the maximially entropic density $p(x)$,we maximise the entropic functional 
 \begin{equation}
 \label{BSG}
-S = - \int p(\lambda)\log p(\lambda)d\lambda- \sum_{i}\alpha_{i}\bigg[\int p(\lambda)\lambda^{i}d\lambda - \mu_{i}\bigg]
+S = - \int p(x)\log p(x)dx- \sum_{i}\alpha_{i}\bigg[\int p(x)\lambda^{i}dx - \mu_{i}\bigg]
 \end{equation}
-with respect to $p(\lambda)$, where $ \mathbb{E}_{p}[ \lambda^{i}]= \mu_{i}$ are the power moment constraints on the spectral density. The first term in equation \eqref{BSG} is referred to as the Boltzmann-Shannon-Gibbs (BSG) entropy, which has been applied in multiple fields, ranging from condensed matter physics~\citep{Giffin2016}, finance~\citep{Neri2012}, under the axioms of consistency, uniqueness, invariance under coordinate transformations, sub-set and system independence, it can be proved that for constraints in the form of expected values, drawing self-consistent inferences requires maximising the entropy \citep{{Shore1980},{Presse2013}}. 
+with respect to $p(\lambda)$, where $ \mathbb{E}_{p}[ \lambda^{i}]= \mu_{i}$ are the power moment constraints on the spectral density. The first term in Equation \eqref{BSG} is referred to as the Boltzmann-Shannon-Gibbs (BSG) entropy, which has been applied in multiple fields, ranging from condensed matter physics~\citep{Giffin2016} to finance~\citep{Neri2012}, under the axioms of consistency, uniqueness, invariance under coordinate transformations, sub-set and system independence, it can be proved that for constraints in the form of expected values, drawing self-consistent inferences requires maximising the entropy \citep{{Shore1980},{Presse2013}}. 
 %Recent work in machine learning using moment constraints with an off the shelf maximum entropy algorithm \cite{ete,bandyopadhyay2005maximum} in order to calculate the log determinant, outperforms Chebyshev, Taylor, Lanczos and kernel based approximations.
 %The algorithm begins to show pathologies and increasing error for  $m \geq 8$ moments, due to convergence issues \cite{DBLP:conf/bigdataconf/GranziolR17}, making it unsuitable for machine learning where typical squared exponential kernels have very sharply decaying spectra and thus a larger number of moments is required for high precision. 
 
@@ -94,28 +94,28 @@ with respect to $p(\lambda)$, where $ \mathbb{E}_{p}[ \lambda^{i}]= \mu_{i}$ are
 
 
 \subsection{Variational Inference}
-Variational Methods \cite{mackay2003information,fox2012tutorial} in machine learning pose the problem of intractable density estimation from the application of Bayes' rule as a functional optimization problem,
+Variational Methods \cite{fox2012tutorial} in machine learning pose the problem of intractable density estimation from the application of Bayes' rule as a functional optimization problem,
 \begin{equation}
 p(z|x) = \frac{p(x|z)p(z)}{p(x)} \approx q(z),
 \end{equation}
-and finding the appropriate $q(z)$. Typically, whilst the functional form of $p(x|z)$ is known, calculating $p(x) = \int p(x|z)p(z)dz$ is intractable. Using Jensen's inequality we can show that,
+and seek to find the appropriate $q(z)$. Typically, whilst the functional form of $p(x|z)$ is known, calculating $p(x) = \int p(x|z)p(z)dz$ is intractable. Using Jensen's inequality we can show that,
 \begin{equation}
 \log p(x) \geq \mathbb{E}_{q}[\log p(x,z)]-\mathbb{E}_{q}[\log q(z)]. \footnote{Where the R.H.S is known as the evidence lower bound (ELBO).}
-\end{equation}It can be shown that the reverse KL divergence between the posterior and the variational distribution, $\mathbb{D}_{kl}(q|p)$, can be written as, 
+\end{equation}Further the reverse KL divergence between the posterior and the variational distribution, $\mathbb{D}_{kl}(q|p)$, can be written as, 
 \begin{equation}
 \log p(x) = \mathbb{E}_{q}[\log p(x,z)]-\mathbb{E}_{q}[\log q(z)] + \mathbb{D}_{kl}(q|p).
 \end{equation}
 Hence maximising the evidence lower bound is equivalent to minimising the reverse KL divergence between $p$ and $q$. 
 
 %By assuming the variational distribution to factor over the set of latent variables, the functional form of the variational marginals, subject to the normalisation condition, can be computed using functional differentiation of the dual,
-\begin{equation}
-\frac{\partial}{\partial Q_{i}(x_{i})}\bigg\{-\mathbb{D}_{kl}[Q_{i}(x_{i}|Q^{*}(x_{i}))]-\lambda_{i}\bigg(\int Q_{i}dx_{i}-1\bigg)\bigg\},
-\end{equation}
-leading to a Gibbs' distribution and an iterative update equation. 
+%\begin{equation}
+%\frac{\partial}{\partial Q_{i}(x_{i})}\bigg\{-\mathbb{D}_{kl}[Q_{i}(x_{i}|Q^{*}(x_{i}))]-\lambda_{i}\bigg(\int Q_{i}dx_{i}-1\bigg)\bigg\},
+%\end{equation}
+%leading to a Gibbs' distribution and an iterative update equation. 
 
 \subsection{MaxEnt as Constrained Variational Inference}
 \label{method}
-We consider minimizing the reverse KL divergence between our surrogate posterior $q(\lambda)$ and our prior $p_{0}(\lambda)$ on the eigenspectrum, 
+We consider minimising the reverse KL divergence between our surrogate posterior $q(x)$ and our prior $p_{0}(x)$ 
 \begin{equation}
 \mathcal{D}_{kl}(q|p_{0}) = -H(q) - \int_{0}^{1} q(\lambda)\log p_{0}(\lambda)d\lambda,
 \end{equation}
@@ -123,12 +123,12 @@ such that the normalization and moment constraints are satisfied. Here $H(q)$ de
 
 By the theory of Lagrangian duality, the convexity of the KL divergence and the affine nature of the moment constraints, we maximise the dual \cite{boyd_vandenberghe_2009},
 \begin{equation}
--H(q) - \int q(\lambda)\log p_{0}(\lambda)d\lambda - \sum_{i=0}^{m}\alpha_{i}\biggl(\int_{0}^{1}q(\lambda)\lambda^{i}d\lambda - \mu_{i}\biggr),
+-H(q) - \int q(x)\log p_{0}(x)d\lambda - \sum_{i=0}^{m}\alpha_{i}\biggl(\int_{0}^{1}q(x)\lambda^{i}dx - \mu_{i}\biggr),
 \end{equation}
 or alternatively we minimise
 \begin{equation}
 \label{eq:maxrelent}
-H(q) + \int q(\lambda)\log p_{0}(\lambda)d\lambda - \sum_{i=0}^{m}\alpha_{i}\biggl(\int_{0}^{1}q(\lambda)\lambda^{i}d\lambda - \mu_{i}\biggr).
+H(q) + \int q(x)\log p_{0}(x)d\lambda - \sum_{i=0}^{m}\alpha_{i}\biggl(\int_{0}^{1}q(x)\lambda^{i}dx - \mu_{i}\biggr).
 \end{equation}
 
 \subsection{Link to Information Physics}
@@ -139,31 +139,31 @@ In the field of information physics the minimization of Equation \eqref{eq:maxre
 	\item {\bfseries Sub-System Independence:} for two independent sub-system it should not matter if we treat the inference separately or jointly.
 	\item {\bfseries Objectivity:} Under no new information, our inference should not change. Hence under no constraints, our posterior should coincide with our prior.
 \end{enumerate}
-These lead to the generalised entropic functional,
-\begin{equation}
--\int q(x)\log\frac{q(x)}{p_{0}(x)}dx - \sum_{i}\alpha_{i}\bigg(\int_{x\in \mathcal{D}}q(x)f_{i}(x)dx-\mu_{i}\bigg).
-\end{equation}
-Here the justification for restricting ourselves to a functional is derived from considering the set of all distributions $q_{i}(\lambda)$ compatible with the constraints and devising a transitive ranking scheme.  It can be shown, further, that Newton's laws, non-relativistic quantum mechanics and Bayes' rule can all be derived under this formalism. In the case of a flat prior over the spectral domain, we reduce to the method of maximum entropy with moment constraints \cite{jaynes1982rationale,inftheoryjaynes}.  
+%These lead to the generalised entropic functional,
+%\begin{equation}
+%-\int q(x)\log\frac{q(x)}{p_{0}(x)}dx - \sum_{i}\alpha_{i}\bigg(\int_{x\in \mathcal{D}}q(x)f_{i}(x)dx-\mu_{i}\bigg).
+%\end{equation}
+The justification for restricting ourselves to a functional is derived from considering the set of all distributions $q_{j}(x)$ compatible with the constraints and devising a transitive ranking scheme.  It can be shown, further, that Newton's laws, non-relativistic quantum mechanics and Bayes' rule can all be derived under this formalism. In the case of a flat prior over the spectral domain, we reduce to the method of maximum entropy with moment constraints \cite{jaynes1982rationale,inftheoryjaynes}.  
 
 \subsection{Algorithm}
 \label{algorithm}
 The generalised dual objective function which we minimise is,
 \begin{equation}
-\mathcal{S}(q,q_{0}) = \int_{0}^{1}q_{0}(\lambda)\exp(-[1+\sum_{i}\alpha_{i}\lambda^{i}])d\lambda + \sum_{i}\alpha_{i}\mu_{i},
+\mathcal{S}(q,q_{0}) = \int_{0}^{1}q_{0}(x)\exp(-[1+\sum_{i}\alpha_{i}x^{i}])dx+ \sum_{i}\alpha_{i}\mu_{i},
 \end{equation}
 which can be shown to have gradient
 \begin{equation}
-\frac{\partial \mathcal{S}(q,q_{0})}{\partial \alpha_{j}}= \mu_{j}-\int_{0}^{1}q_{0}(\lambda)\lambda^{j}\exp(-[1+\sum_{i}\alpha_{i}\lambda^{i}])d\lambda,
+\frac{\partial \mathcal{S}(q,q_{0})}{\partial \alpha_{j}}= \mu_{j}-\int_{0}^{1}q_{0}(x)x^{j}\exp(-[1+\sum_{i}\alpha_{i}x^{i}])dx,
 \end{equation}
 and Hessian
 \begin{equation}
-\frac{\partial^{2} \mathcal{S}(q,q_{0})}{\partial \alpha_{j}\partial\alpha_{k}}= \int_{0}^{1}q_{0}(\lambda)\lambda^{j+k}\exp(-[1+\sum_{i}\alpha_{i}\lambda^{i}])d\lambda.
+\frac{\partial^{2} \mathcal{S}(q,q_{0})}{\partial \alpha_{j}\partial\alpha_{k}}= \int_{0}^{1}q_{0}(x)x^{j+k}\exp(-[1+\sum_{i}\alpha_{i}x^{i}])dx.
 \end{equation}
 \section{Log Determinant}
 A common hindrance, appearing in Gaussian graphical models, Gaussian Processes \cite{rue2005gaussian,rasmussen2006gaussian}, sampling, variational inference \cite{mackay2003information}, metric/kernel learning \cite{davis2007information,van2009minimum}, Markov random fields \cite{wainwright2006log}, Determinantal Point Processes (DPP's) and Bayesian Neural networks \cite{mackay1992bayesian}, is the calculation of the log determinant of a large positive definite matrix. For a large positive definite matrix $K \in  \mathcal{R}^{n\times n}$, the canonical solution involves the Cholesky decomposition, $K = LL^{T}$. The log determinant is then trivial to calculate as $\log \mathrm{Det}(K) = 2\sum_{i=1}^{n}\log L_{ii}$. This computation invokes a computational complexity $\mathcal{O}(n^{3})$ and storage complexity $\mathcal{O}(n^{2})$ and is thus unfit for purpose for $n>10^{4}$, i.e. even a small sample set in the age of big data. 
 \subsection{Related Work}
 Recent work in machine learning combined stochastic trace estimation with Taylor approximations for Gaussian process parameter learning \cite{zhang2007approximate, boutsidis2017randomized}, %reducing the computational cost to matrix vector multiplications (MVMs), $\mathcal{O}(n^{2})$ for a dense matrix and $\mathcal{O}(nnz)$\footnote{Number of non zeros.} for a sparse matrix. 
-Further developments included improved performance using Chebyshev polynomials \cite{han2015large} and Lanczos techniques with structured kernel interpolation (SKI) in order to accelerate MVMs to $\mathcal{O}(n+i\log i)$, where $i$ is the number of inducing points \cite{dong2017scalable}. SKI relies on an extension of Kronecker and Toeplitz methods, which are limited to low dimensional (typically $D \leq 5$) data, which cannot be assumed in general.  Secondly, whilst Lanczos methods have a convergence rate of double that of the Chebyshev approaches, the derived bounds require $\mathcal{O}(\sqrt{\kappa})$ Lanczos steps \cite{Ubaru2016}, where $\kappa$ is the matrix condition number. In many practical cases of interest $\kappa > 10^{10}$ and thus the large number of $m$ matrix vector multiplications becomes prohibitive. 
+Further developments included improved performance using Chebyshev polynomials \cite{han2015large} and Lanczos techniques with structured kernel interpolation (SKI) in order to accelerate matrix vector multiplications (MVM's) to $\mathcal{O}(n+i\log i)$, where $i$ is the number of inducing points \cite{dong2017scalable}. SKI relies on an extension of Kronecker and Toeplitz methods, which are limited to low dimensional (typically $D \leq 5$) data, which cannot be assumed in general.  Secondly, whilst Lanczos methods have a convergence rate of double that of the Chebyshev approaches, the derived bounds require $\mathcal{O}(\sqrt{\kappa})$ Lanczos steps \cite{Ubaru2016}, where $\kappa$ is the matrix condition number. In many practical cases of interest $\kappa > 10^{10}$ and thus the large number of $m$ matrix vector multiplications becomes prohibitive. 
 We restrict ourselves to the high-dimensional, high-condition number, big data limit. 
 
 \subsection{Log Determinants as a Spectral Estimation Problem}
@@ -176,14 +176,14 @@ Here we have used the cyclicity of the determinant and $\mathbb{E}_{\mu}$ denote
 \label{eq:spectrallog}
  \int_{\lambda_{min}}^{\lambda_{max}}d\mu(\lambda)\log \lambda  \\  = \int_{\lambda_{min}}^{\lambda_{max}}\sum_{i=1}^{n}\frac{1}{n}\delta(\lambda-\lambda_{i})\log \lambda d\lambda.
 \end{equation}
-Given that the matrix is PD, we know that $\lambda_{min}>0$ and we can divide the matrix by an upper bound, $\lambda_{u} \geq \lambda_{max}$, via the Gershgorin circle theorem \cite{gershgorin1931uber} such that,
+Where $\lambda_{max,min}$ correspond to the largest and smallest eigenvalues respectively. Given that the matrix is PD, we know that $\lambda_{min}>0$ and we can divide the matrix by an upper bound, $\lambda_{u} \geq \lambda_{max}$, via the Gershgorin circle theorem \cite{gershgorin1931uber} such that,
 \begin{equation}
 \begin{aligned}
 & \log \text{Det} \frac{K}{\lambda_{u}} =  n\mathbb{E}_{\mu}(\log \lambda') =  n\mathbb{E}_{\mu}(\log \lambda) -  n\lambda_{u}\\
 & \therefore \log \text{Det} K = n\mathbb{E}_{\mu}(\log \lambda') + n\lambda_{u}.
 \end{aligned}
 \end{equation}
-Here $\lambda_{u} = \text{arg max}_{i}(\sum_{j=1}^{n}|K_{ij}|)$, i.e the max sum of the rows of the absolute of the matrix $K$. Hence we can comfortably work with the transformed measure,
+Where $\lambda' = \lambda/\lambda_{u}$ and $\lambda_{u} = \text{arg max}_{i}(\sum_{j=1}^{n}|K_{ij}|)$, i.e the max sum of the rows of the absolute of the matrix $K$. Hence we can comfortably work with the transformed measure,
 \begin{equation}
 \int_{\lambda_{min}/\lambda_{u}}^{\lambda_{max}/\lambda_{u}}p(\lambda')\log \lambda' d\lambda' = \int_{0}^{1}p(\lambda')\log \lambda' d\lambda',
 \end{equation}
@@ -202,7 +202,7 @@ In practice we approximate the expectation over all random vectors with a simple
 \begin{equation}
 \mathbb{E}(zK^{m}z^{t}) \approx \frac{1}{d}\bigg(\sum_{j=1}^{j=d}z_{j}K^{m}z_{j}^{t} \bigg),
 \end{equation}
-where we take the product of the matrix $K$ with the vector $z_{j}$, $m$ times, so as to avoid costly $\mathcal{O}(n^{3})$ matrix matrix multiplication. This allows us to calculate the non central moment expectations in $\mathcal{O}(dmn^{2})$ for dense matrices, or $\mathcal{O}(dm\times nnz)$ for sparse matrices, where $d\times m << n$. The random unit vector $z_{j}$ can be drawn from any distribution, such as a Gaussian. 
+where we take the product of the matrix $K$ with the vector $z_{j}$, $m$ times, so as to avoid costly $\mathcal{O}(n^{3})$ matrix matrix multiplication. This allows us to calculate the non central moment expectations in $\mathcal{O}(dmn^{2})$ for dense matrices, or $\mathcal{O}(dm\times nnz)$ for sparse matrices, where $d\times m << n$. The random unit vector $z_{j}$ can be drawn from any distribution, such as a Gaussian. The algorithm is outlined in Algorithm \ref{alg:stochtrace}.
 
 
 
@@ -266,7 +266,7 @@ where we take the product of the matrix $K$ with the vector $z_{j}$, $m$ times, 
 		\STATE {\bfseries Output:} Log Determinant Approximation $\log|K|$
 		\STATE $B = K/\lambda_{u}$
 		\STATE $\mu$ (moments)$ \gets$ StochasticTraceEstimation$(B, k)$ 
-		\STATE $\alpha$ (coefficients) $\gets \text{VBALD(}\mu, \epsilon)$
+		\STATE $\alpha$ (coefficients) $\gets \text{MaxEnt(}\mu, \epsilon)$
 		\STATE $q(\lambda) \gets q(\lambda | \alpha)$
 		\STATE $\log|A| \gets n\int \log(\lambda) q(\lambda) d\lambda + n\log(\lambda_{u})$
 	\end{algorithmic}
@@ -274,34 +274,34 @@ where we take the product of the matrix $K$ with the vector $z_{j}$, $m$ times, 
 
 \section{Experiments}
 \label{experiments}
-For simplicity we have kept all the formula's in terms of power moments, however we find vastly improved performance and conditioning when we switch to another polynomial basis. Many alternative and orthogonal Polynomial bases exist (so that the errors between moment estimations are uncorrelated), we implement both Chebyshev and Legendre moments in our Lagrangian and find similar performance for both. The use of Chebyshev moments in Machine Learning and Computer Vision has been reported to be of practical siginifcance previously \cite{yap2001chebyshev}. We use Python's SciPy minimize standard newton-conjugate gradient algorithm to solve the objective, given the gradient and hessian to within a gradient tolerance $gtol$. To make the Hessian better conditioned so as to achieve convergence we add jitter $1e-8$ along the diagonal. We use a grid size of $1e-4$ for the quadrature. The pseudo code is given in Algorithm \ref{alg:maxent}. The Log Determinant is then calculated using Algorithm \ref{alg:logdet}.
+For simplicity we have kept all the formulas in terms of power moments, however we find vastly improved performance and conditioning when we switch to orthogonal Polynomial bases (so that the errors between moment estimations are uncorrelated). We implement both Chebyshev and Legendre moments in our Lagrangian and find similar performance for both. The use of Chebyshev moments in Machine Learning and Computer Vision has been reported to be of practical siginifcance previously \cite{yap2001chebyshev}. We use Python's SciPy minimize standard newton-conjugate gradient algorithm to solve the objective, given the gradient and hessian to within a gradient tolerance $gtol$. To make the Hessian better conditioned so as to achieve convergence we add jitter $10^{-8}$ along the diagonal. We use a grid size of $10^{-4}$ for the quadrature. The pseudo code is given in Algorithm \ref{alg:maxent}. The log eterminant is then calculated using Algorithm \ref{alg:logdet}.
 
 \subsection{Comparison to Previous MaxEnt algorithm}
-In \cite{Granziol2017} it was proven that the addition of an extra constraint cannot increase the entropy of the MaxEnt solution. For the problem of log determinants, this signifies that the entropy of the spectral approximation should decrease with the addition of every moment constraint. We implement the Maximum Entropy algorithm \cite{bandyopadhyay2005maximum} in the same manner as applied in Entropic trace estimation \cite{ete}. We show results for the Themomech UFL SuiteSparse dataset, with $n=80,900$, for which the true log determinant can be calculated. We see that for the MaxEnt algorithm \cite{bandyopadhyay2005maximum} implementation used in\cite{ete} that for $m > 8$ moments, the error (Figure \ref{fig:previousmaxentmomentserror}) and the entropy (Figure\ref{fig:previousmaxentmomentsentropy}) begin to increase. For our algorithm, beyond seeing that the performance is vastly increased (Figure \ref{fig:newsmaxentmomentserror}), the error continually decreases with increasing moment information and the Entropy (Figure \ref{fig:newmaxentmomentsentropy}) decreases smoothly.
+In \cite{Granziol2017} it was proven that the addition of an extra constraint cannot increase the entropy of the MaxEnt solution. For the problem of log determinants, this signifies that the entropy of the spectral approximation should decrease with the addition of every moment constraint. We implement the Maximum Entropy algorithm \cite{bandyopadhyay2005maximum} in the same manner as applied for log determinant estimation in \cite{ete}. We show results for the Themomech UFL SuiteSparse dataset, with $n=80,900$, for which the true log determinant can be calculated. We see that for the MaxEnt algorithm \cite{bandyopadhyay2005maximum} implementation used in\cite{ete} that for $m > 8$ moments, the error (Figure \ref{fig:previousmaxentmomentserror}) and the entropy (Figure\ref{fig:previousmaxentmomentsentropy}) begin to increase. For our algorithm, beyond seeing that the performance is vastly increased (Figure \ref{fig:newsmaxentmomentserror}), the error continually decreases with increasing moment information and the Entropy (Figure \ref{fig:newmaxentmomentsentropy}) decreases smoothly.
 
 \begin{figure}
 	\begin{subfigure}%{width=0.2\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{momentsentropy_smpl_30_dataset_thermomech_TCcrop}
-		\caption{Previous Maximum Entropy Algorithm}
+		\caption{Previous MaxEnt Algorithm, Entropy against Moments}
 		\label{fig:previousmaxentmomentsentropy}
 	\end{subfigure}
 	\begin{subfigure}%{.2\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{momentserror_smpl_30_dataset_thermomech_TCcrop}
-		\caption{Previous Maximum Entropy Algorithm}
+		\caption{Previous MaxEnt Algorithm, Errors against Moments}
 		\label{fig:previousmaxentmomentserror}
 	\end{subfigure}
 	\begin{subfigure}%{.2\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{entropyvsmomentsthermonew}
-		\caption{New Maximum Entropy Algorithm}
+		\includegraphics[width=0.9\linewidth]{entropyvsmomentsthermonewcrop}
+		\caption{New MaxEnt Algorithm, Entropy against Moments}
 		\label{fig:newmaxentmomentsentropy}
 	\end{subfigure}
 	\begin{subfigure}%{.2\textwidth}
 		\centering
-		\includegraphics[width=.8\linewidth]{errorvsmomentsthermonew}
-		\caption{Previous Maximum Entropy Algorithm}
+		\includegraphics[width=0.9\linewidth]{errorvsmomentsthermonewcrop}
+		\caption{New MaxEnt Algorithm, Error against Moments}
 		\label{fig:newsmaxentmomentserror}
 	\end{subfigure}
 	\caption{New Maximum Entropy Algorithm}
@@ -309,23 +309,6 @@ In \cite{Granziol2017} it was proven that the addition of an extra constraint ca
 
 \subsection{Synthetic Kernel Data}
 
-
-
-\begin{figure}
-	\begin{subfigure}%{width=0.2\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{propercond30dim0p1}
-		\caption{Length Scale = 0.1, Condition number = 16}
-		\label{fig:lscale0.1}
-	\end{subfigure}
-	\begin{subfigure}%{.2\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{69500756condl0p33}
-		\caption{Length Scale = 0.33, Condition number = $2\times 10^{7}$ Equivalent Chebyshev steps $n=1200$, Lanczos steps $n\approx 100$.}
-		\label{fig:lscale0.33}
-	\end{subfigure}
-	\caption{Comparison of MaxEnt against Taylor, Lanczos and Chebyshev algorithms for calculating the log determinant of synthetic squared exponential kernel matrices of different condition number. The absolute relative error is on the $y$-axis and number of moments used on the $x$-axis.}
-\end{figure}
 We simulate the kernel matrices from a Gaussian/Determinental Point Process \cite{Rasmussen2006}, by generating a typical squared exponential kernel matrix $K \in \mathbb{R}^{n \times n}$ using the Python GPy package with $6$ dimensional, Gaussian inputs. We then add noise of variance $10^{-8}$ along the diagonals. We employ a variety of realistic uniform length-scales. We use $m=30$ Moments, $d=50$ Hutchinson probe vectors and compare our novel MaxEnt algorithm against the Taylor approximation, Chebyshev \cite{han2015large} and Lanczos \cite{ubaru2017fast} in Table \ref{table:errortable}. We see that for low condition numbers (Figure \ref{fig:lscale0.1}) The benefit of framing the log determinant as an optimization problem is marginal, whereas for large condition numbers (Figures \ref{fig:lscale0.33}) the benefits are substantial, with orders of magnitude better results than competing methods. We also provide the number of Chebyshev and Lanczos steps required to achieve similar performance. 
 \begin{table}[t]
 	\label{table:errortable}
@@ -913,6 +896,22 @@ From the monotonicity of the function $\log(x)$, we have that  $\log(x) \leq \mb
 We thus note that by reducing the self entropy of the proposal distribution $q(x)$ we necessarily reduce the maximum possible error of the log determinant estimation. However, given that we do not have an analytic form of $p(x)$, we cannot explicitly calculate $\mathcal{D}_{kl}(P\|Q)$ and hence the bound in its current form is not inherently practical. We leave the estimation of this term and derivation of estimate uncertainty to future work.
 
 Conditions for the existence of a solution to this problem have been proved for the case of the Hausdorff moment conditions \cite{mead1984maximum}, of which our problem is a special case.
+
+\begin{figure}
+	\begin{subfigure}%{width=0.2\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{propercond30dim0p1}
+		\caption{Length Scale = 0.1, Condition number = 16}
+		\label{fig:lscale0.1}
+	\end{subfigure}
+	\begin{subfigure}%{.2\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{69500756condl0p33}
+		\caption{Length Scale = 0.33, Condition number = $2\times 10^{7}$ Equivalent Chebyshev steps $n=1200$, Lanczos steps $n\approx 100$.}
+		\label{fig:lscale0.33}
+	\end{subfigure}
+	\caption{Comparison of MaxEnt against Taylor, Lanczos and Chebyshev algorithms for calculating the log determinant of synthetic squared exponential kernel matrices of different condition number. The absolute relative error is on the $y$-axis and number of moments used on the $x$-axis.}
+\end{figure}
 
 \section*{Acknowledgements}
 

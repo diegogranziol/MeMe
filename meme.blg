@@ -20,10 +20,6 @@ Repeated entry---line 1654 of file sample.bib
  : @article{wainwright2006log
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1706 of file sample.bib
- : @article{han2017faster
- :                       ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 1714 of file sample.bib
  : @inproceedings{yap2001chebyshev
  :                                ,
@@ -207,52 +203,49 @@ I'm skipping whatever remains of this entry
 A bad cross reference---entry "DBLP:conf/bigdataconf/GranziolR17"
 refers to entry "DBLP:conf/bigdataconf/2017", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/bigdataconf/2017"
-Warning--there's a number but no series in chung1997spectral
 Warning--there's a number but no volume in gershgorin1931uber
 Warning--empty journal in rasmussen2006gaussian
-Warning--empty year in ubaruapplications
-Warning--empty journal in ubaruapplications
 Warning--empty journal in Ubaru2016
 Warning--empty journal in bayesianspecialcase
-You've used 55 entries,
+You've used 50 entries,
             2568 wiz_defined-function locations,
-            887 strings with 13162 characters,
-and the built_in function-call counts, 21846 in all, are:
-= -- 2365
-> -- 781
-< -- 15
-+ -- 262
-- -- 254
-* -- 1690
-:= -- 3495
-add.period$ -- 273
-call.type$ -- 55
-change.case$ -- 338
-chr.to.int$ -- 52
-cite$ -- 62
-duplicate$ -- 877
-empty$ -- 1596
-format.name$ -- 342
-if$ -- 4528
+            864 strings with 12464 characters,
+and the built_in function-call counts, 20060 in all, are:
+= -- 2176
+> -- 707
+< -- 13
++ -- 238
+- -- 230
+* -- 1559
+:= -- 3202
+add.period$ -- 248
+call.type$ -- 50
+change.case$ -- 307
+chr.to.int$ -- 47
+cite$ -- 54
+duplicate$ -- 804
+empty$ -- 1470
+format.name$ -- 309
+if$ -- 4158
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 58
-newline$ -- 330
-num.names$ -- 165
-pop$ -- 314
+missing$ -- 53
+newline$ -- 301
+num.names$ -- 150
+pop$ -- 275
 preamble$ -- 1
-purify$ -- 402
+purify$ -- 365
 quote$ -- 0
-skip$ -- 724
+skip$ -- 666
 stack$ -- 0
-substring$ -- 1216
-swap$ -- 219
-text.length$ -- 15
+substring$ -- 1167
+swap$ -- 202
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 408
-warning$ -- 7
-while$ -- 188
-width$ -- 60
-write$ -- 750
-(There were 51 error messages)
+type$ -- 372
+warning$ -- 4
+while$ -- 175
+width$ -- 55
+write$ -- 685
+(There were 50 error messages)

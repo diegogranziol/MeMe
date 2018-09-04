@@ -43,12 +43,6 @@ Caticha, A.
   commissioned by the 11th brazilian meeting on {B}ayesian
   statistics--ebeb-2012.
 
-\bibitem[\protect\citeauthoryear{Chung}{1997}]{chung1997spectral}
-Chung, F.~R.
-\newblock 1997.
-\newblock {\em Spectral graph theory}.
-\newblock Number~92. American Mathematical Soc.
-
 \bibitem[\protect\citeauthoryear{Cover and Thomas}{2012}]{cover2012elements}
 Cover, T.~M., and Thomas, J.~A.
 \newblock 2012.
@@ -137,13 +131,6 @@ Granziol, D., and Roberts, S.~J.
 \newblock In {\em 2017 {IEEE} International Conference on Big Data, BigData
   2017, Boston, MA, USA, December 11-14, 2017},  88--93.
 
-\bibitem[\protect\citeauthoryear{Han \bgroup et al\mbox.\egroup
-  }{2017}]{han2017faster}
-Han, I.; Kambadur, P.; Park, K.; and Shin, J.
-\newblock 2017.
-\newblock Faster greedy map inference for determinantal point processes.
-\newblock {\em arXiv preprint arXiv:1703.03389}.
-
 \bibitem[\protect\citeauthoryear{Han, Malioutov, and Shin}{2015}]{han2015large}
 Han, I.; Malioutov, D.; and Shin, J.
 \newblock 2015.
@@ -169,16 +156,6 @@ Jaynes, E.~T.
 \newblock On the rationale of maximum-entropy methods.
 \newblock {\em Proceedings of the IEEE} 70(9):939--952.
 
-\bibitem[\protect\citeauthoryear{Kang, Meeder, and
-  Faloutsos}{2011}]{kang2011spectral}
-Kang, U.; Meeder, B.; and Faloutsos, C.
-\newblock 2011.
-\newblock Spectral analysis for billion-scale graphs: Discoveries and
-  implementation.
-\newblock In {\em Pacific-Asia Conference on Knowledge Discovery and Data
-  Mining},  13--25.
-\newblock Springer.
-
 \bibitem[\protect\citeauthoryear{Kang}{2013}]{kang2013fast}
 Kang, B.
 \newblock 2013.
@@ -200,12 +177,6 @@ Kulesza, A.
 \newblock Determinantal point processes for machine learning.
 \newblock {\em Foundations and Trends{\textregistered} in Machine Learning}
   5(2-3):123--286.
-
-\bibitem[\protect\citeauthoryear{Leskovec and Krevl}{2014}]{snapnets}
-Leskovec, J., and Krevl, A.
-\newblock 2014.
-\newblock {SNAP Datasets}: {Stanford} large network dataset collection.
-\newblock \url{http://snap.stanford.edu/data}.
 
 \bibitem[\protect\citeauthoryear{Li, Jegelka, and Sra}{2016}]{li2016fast}
 Li, C.; Jegelka, S.; and Sra, S.
@@ -307,10 +278,6 @@ Shore, J., and Johnson, R.
 \newblock Axiomatic {D}erivation of the {P}rinciple of {M}aximum {E}ntropy and
   the {P}rinciple of {M}inimum {C}ross-{E}ntropy.
 \newblock {\em IEEE Transactions on information theory} 26(1):26--37.
-
-\bibitem[\protect\citeauthoryear{Ubaru and Saad}{}]{ubaruapplications}
-Ubaru, S., and Saad, Y.
-\newblock Applications of trace estimation techniques.
 
 \bibitem[\protect\citeauthoryear{Ubaru, Chen, and Saad}{2016}]{Ubaru2016}
 Ubaru, S.; Chen, J.; and Saad, Y.
