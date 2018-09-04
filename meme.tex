@@ -7,7 +7,7 @@
 \usepackage{courier}  %Required
 \usepackage{url}  %Required
 \usepackage{graphicx}  %Required
-\usepackage{subfigure}
+%\usepackage{subfigure}
 \usepackage{subfig}
 %\usepackage{subcaption}
 \usepackage{natbib}
@@ -642,23 +642,35 @@ In order to test the robustness of the approach to networks with clusters of dif
 %\\\\
 To test the performance of our approach for networks that are too big to apply eigen-decomposition, we also generate two large networks by mixing Erd{\"o}s-R{\'e}nyi, Watts-Strogatz and Barabási-Albert networks. The first large network has a size of  201,600 nodes and comprises 350 interconnected clusters whose size varies from 500 to 1000 nodes. The other large network has a size of 404,420 nodes and comprises interconnected 1355 clusters whose size varies from 200 to 800 nodes. The results in Figure \ref{fig:largeSyntheNet} show that our MaxEnt approach outperforms Lanczos for both large synthetic networks.
 
-\begin{figure}
+\begin{figure}[htp]
 	\centering
-	\begin{subfigure}
-		\centering
-		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_n=201600_c=305.eps}
-		\caption{305 clusters}
-		\label{subfig:emailerror1}	
-	\end{subfigure}%
-	\begin{subfigure}
-		\centering
-		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_c_1355_n_404420.eps}
-		\caption{1,355 clusters}
-		\label{subfig:emailerror2}	
-	\end{subfigure}%
-	\caption{Log error of community detection using MaxEnt and Lanczos on large synthetic networks: a) synthetic network of  201,600 nodes and 305 clusters and b) synthetic network of 404,420 nodes and 1,355 clusters.}
-	\label{fig:largeSyntheNet}	
-\end{figure} 
+	\label{figur}\caption{Comparison of Classical and Novel MaxEnt algorithms}
+	
+	\subfloat[$201,600$ nodes and $305$ clusters]{\label{figur:5}\includegraphics[width=40mm]{Figures/SynNet_n=201600_c=305.eps}}
+	\subfloat[$404,420$ nodes and $1,355$ clusters]{\label{figur:6}\includegraphics[width=40mm]{Figures/SynNet_c_1355_n_404420.eps}}
+	\\
+	\subfloat[Email Dataset]{\label{figur:7}\includegraphics[width=40mm]{Figures/Error_for_EmailL.eps}}
+	\subfloat[Netscience Dataset]{\label{figur:8}\includegraphics[width=40mm]{Figures/Error_for_NetscienceL.eps}}
+	
+\end{figure}
+
+%\begin{figure}
+%	\centering
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_n=201600_c=305.eps}
+%		\caption{305 clusters}
+%		\label{subfig:emailerror1}	
+%	\end{subfigure}%
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[trim=0cm 0cm 0.1cm 0.0cm, clip, width=1.0\linewidth]{Figures/SynNet_c_1355_n_404420.eps}
+%		\caption{1,355 clusters}
+%		\label{subfig:emailerror2}	
+%	\end{subfigure}%
+%	\caption{Log error of community detection using MaxEnt and Lanczos on large synthetic networks: a) synthetic network of  201,600 nodes and 305 clusters and b) synthetic network of 404,420 nodes and 1,355 clusters.}
+%	\label{fig:largeSyntheNet}	
+%\end{figure} 
 
 %\subsection{Real Data}
 
@@ -688,24 +700,24 @@ The first real-world dataset we use is the Email network, which is generated usi
 We note that this differs from the value of $42$ given by the number of departments at the research institute. A likely reason for this ground truth inflation is that certain departments, Astrophysics, Theoretical Physics and Mathematics for example, may collaborate to such an extent that their division in name may not be reflected in terms of node connection structure.
 
 
-\begin{figure}[t]
-	\centering
-	\begin{subfigure}
-		\centering
-		\includegraphics[trim=0.1cm 0cm 0.5cm 0.1cm, clip, width=1.0\linewidth]{Figures/Error_for_EmailL.eps}
-		\caption{Email Dataset}
-		\label{fig:emailerror}	
-	\end{subfigure}%
-	
-	\begin{subfigure}
-		\centering
-		\includegraphics[trim=0.1cm 0cm 0.5cm 0.1cm, clip,  width=1.0\linewidth]{Figures/Error_for_NetscienceL.eps}
-		\caption{NetScience Dataset}
-		\label{fig:netscienceerror}
-	\end{subfigure}
-	\caption{Log error of community detection using MaxEnt and Lanczos algorithms on for differing number of moments $m$.}
-	\label{fig:netscience}
-\end{figure}
+%\begin{figure}[t]
+%	\centering
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[trim=0.1cm 0cm 0.5cm 0.1cm, clip, width=1.0\linewidth]{Figures/Error_for_EmailL.eps}
+%		\caption{Email Dataset}
+%		\label{fig:emailerror}	
+%	\end{subfigure}%
+%	
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[trim=0.1cm 0cm 0.5cm 0.1cm, clip,  width=1.0\linewidth]{Figures/Error_for_NetscienceL.eps}
+%		\caption{NetScience Dataset}
+%		\label{fig:netscienceerror}
+%	\end{subfigure}
+%	\caption{Log error of community detection using MaxEnt and Lanczos algorithms on for differing number of moments $m$.}
+%	\label{fig:netscience}
+%\end{figure}
 
 \label{smoothinglancsoz}
 %We display the process of spectral learning for both MaxEnt and Lanczos, by plotting the spectral density of both methods against the true eigenvalue spectral density in Figure \ref{fig:emaildensity}. 
